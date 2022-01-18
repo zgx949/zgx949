@@ -25,7 +25,7 @@ public interface AdminService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    List<MenusBean> getMenu(int levelId);
+    List<Object> getMenu(int levelId);
 
 
     /**

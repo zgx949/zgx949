@@ -20,12 +20,12 @@ public class Admin {
     private AdminService adminService;
 
     /**
-    * @Description: 登录控制器
-    * @Param:
-    * @return:
-    * @Author: 左手
-    * @Date: 2022-01-18
-    */
+     * @Description: 登录控制器
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-01-18
+     */
     @PostMapping("login")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
 
@@ -33,24 +33,34 @@ public class Admin {
         if (res != null) {
             res.put("res", "登录成功");
             return CommonApi.success(res, 2);
-        }else {
+        } else {
             return CommonApi.error(null, 1);
         }
 
     }
 
     /**
-    * @Description: 获取所有管理员信息
-    * @Param:
-    * @return:
-    * @Author: 左手
-    * @Date: 2022-01-18
-    */
+     * @Description: 获取所有管理员信息
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-01-18
+     */
     @GetMapping("adminList")
     public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
         // 解析页面参数
-        int page = Integer.parseInt(params.get("page").toString());
-        int pageSize = Integer.parseInt(params.get("pagesize").toString());
+        int page;
+        int pageSize;
+        try {
+            page = Integer.parseInt(params.get("page").toString());
+        } catch (Exception e) {
+            page = 1;
+        }
+        try {
+            pageSize = Integer.parseInt(params.get("pagesize").toString());
+        } catch (Exception e) {
+            pageSize = 10;
+        }
 
         // 分页查询
         List<AdminBean> admins = adminService.getAdmin(page, pageSize);
@@ -73,7 +83,7 @@ public class Admin {
         if (id == -1) {
             map.put("msg", "用户已存在");
             return CommonApi.error(map);
-        }else {
+        } else {
             map.put("msg", "注册成功");
             return CommonApi.success(map, 1);
         }

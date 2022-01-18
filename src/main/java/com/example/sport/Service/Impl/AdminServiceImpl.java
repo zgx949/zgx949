@@ -39,15 +39,12 @@ public class AdminServiceImpl implements AdminService {
         AdminBean admin = adminMapper.selectOne(queryWrapperAdmin);
         if (admin.getPassword().equals(password)) {
             // 账号密码正确
-            Map data = new HashMap();
+            Map data = new HashMap<>();
             data.put("uid", admin.getId());
+            data.put("menus", getMenu(admin.getLevel()));
 
-            QueryWrapper<MenusBean> queryWrapperMenu = new QueryWrapper<>();
-            queryWrapperMenu.eq("level_id", admin.getLevel());
-            List<MenusBean> menus = menusMapper.selectList(queryWrapperMenu);
-            data.put("menus", menus);
             return data;
-        }else {
+        } else {
             // 账号密码错误
             return null;
         }
@@ -55,8 +52,46 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<MenusBean> getMenu(int levelId) {
-        return null;
+    public List<Object> getMenu(int levelId) {
+        // 构建查询level_id
+        QueryWrapper<MenusBean> queryWrapperMenu = new QueryWrapper<>();
+        queryWrapperMenu.ge("level_id", levelId);
+
+        // 生成菜单树
+        List<Object> menuList = new ArrayList<>();
+
+        // 查询
+        List<MenusBean> menus = menusMapper.selectList(queryWrapperMenu);
+        for (MenusBean menu : menus) {
+            if (menu.getParentId() == menu.getId()) {
+                // 如果是顶级菜单
+                Map<String, Object> tempMap = new HashMap<>();
+                tempMap.put("id", menu.getId());
+                tempMap.put("name", menu.getName());
+                tempMap.put("path", menu.getPath());
+                tempMap.put("children", new ArrayList<>());
+                menuList.add(tempMap);
+            } else {
+                // 如果是子菜单
+                for (int i = 0; i < menuList.size(); i++) {
+                    Map tempMap = (Map)menuList.get(i);
+                    int parentId = (int) tempMap.get("id");
+
+                    if (menu.getParentId() == parentId) {
+                        // 最终要加入的子菜单
+                        Map<String, Object> res = new HashMap<>();
+                        res.put("id", menu.getId());
+                        res.put("name", menu.getName());
+                        res.put("path", menu.getPath());
+                        res.put("children", new ArrayList<>());
+                        ((List)(((Map)menuList.get(i)).get("children"))).add(res);
+                        break;
+                    }
+
+                }
+            }
+        }
+        return menuList;
     }
 
     @Override
@@ -69,7 +104,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public int insertAdmin(AdminBean admin) {
         // 判断账号是否存在, 不存在就插入记录
-        return exitAdmin(admin.getUsername())? -1: adminMapper.insert(admin);
+        return exitAdmin(admin.getUsername()) ? -1 : adminMapper.insert(admin);
     }
 
     @Override

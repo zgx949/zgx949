@@ -23,6 +23,13 @@ public class MenusBean {
     public MenusBean() {
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
     public MenusBean(int id, String name, int parentId, int levelId) {
         this.id = id;
         this.name = name;
