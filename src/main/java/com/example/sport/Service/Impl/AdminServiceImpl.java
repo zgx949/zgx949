@@ -109,12 +109,13 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public int deleteAdmin(int id) {
-        return 0;
+
+        return adminMapper.deleteById(id);
     }
 
     @Override
-    public int updateAdmin(Map<String, Object> admin) {
-        return 0;
+    public int updateAdmin(AdminBean admin) {
+        return adminMapper.updateById(admin);
     }
 
     @Override

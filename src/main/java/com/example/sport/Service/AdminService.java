@@ -55,7 +55,7 @@ public interface AdminService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int updateAdmin(Map<String, Object> admin);
+    int updateAdmin(AdminBean admin);
 
 
     /**
