@@ -4,7 +4,7 @@ package com.example.sport.Bean;
 
 import java.sql.Timestamp;
 
-public class CommenBean {
+public class CommentBean {
 //    @Id
     private int id;
     private int articleId;
@@ -12,10 +12,10 @@ public class CommenBean {
     private String text;
     private Timestamp createTime;
 
-    public CommenBean() {
+    public CommentBean() {
     }
 
-    public CommenBean(int id, int articleId, int userId, String text, Timestamp createTime) {
+    public CommentBean(int id, int articleId, int userId, String text, Timestamp createTime) {
         this.id = id;
         this.articleId = articleId;
         this.userId = userId;
