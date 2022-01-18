@@ -16,7 +16,7 @@ public interface AdminService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    boolean loginAdmin(String username, String password);
+    Map<String, Object> loginAdmin(String username, String password);
 
     /**
      * @Description: 根据管理员等级来获取对应菜单的路径
@@ -35,7 +35,7 @@ public interface AdminService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int insertAdmin(Map<String, Object> admin);
+    int insertAdmin(AdminBean admin);
 
 
     /**
@@ -68,5 +68,5 @@ public interface AdminService {
      */
     List<AdminBean> getAdmin(int page, int pageSize);
 
-
+    boolean exitAdmin(String username);
 }

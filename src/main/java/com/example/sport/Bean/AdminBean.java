@@ -31,13 +31,13 @@ public class AdminBean {
         this.collegeId = collegeId;
     }
 
-    public AdminBean(int id, String username, String password, String name, int level, int colleageId) {
+    public AdminBean(int id, String username, String password, String name, int level, int collegeId) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
         this.level = level;
-        this.collegeId = colleageId;
+        this.collegeId = collegeId;
     }
 
     public int getId() {

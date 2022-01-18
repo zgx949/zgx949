@@ -2,19 +2,29 @@ package com.example.sport;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.sport.Bean.AdminBean;
+import com.example.sport.Bean.MenusBean;
+import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
+import com.example.sport.Mapper.MenusMapper;
+import com.example.sport.Service.Impl.AdminServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class SportApplicationTests {
 
     @Resource
     private AdminMapper adminMapper;
+
+    @Resource
+    private MenusMapper menusMapper;
 
     @Test
     void contextLoads() {
@@ -28,9 +38,33 @@ class SportApplicationTests {
     @Test
     void insertAdmin() {
         // 插入一个admin
-        AdminBean admin = new AdminBean("zgx949","zgx949","郑国相",1,1);
+        AdminBean admin = new AdminBean("ss","zgx949","郑国相",1,1);
         adminMapper.insert(admin);
         System.out.println(admin.getId());
+
+    }
+    @Test
+    void adminLogin() {
+        // 获取菜单
+        QueryWrapper<MenusBean> queryWrapperMenu = new QueryWrapper<>();
+        queryWrapperMenu.eq("level_id", "1");
+        List<MenusBean> menus = menusMapper.selectList(queryWrapperMenu);
+        System.out.println(menus);
+    }
+
+    @Test
+    void getAdmins() {
+        List<AdminBean> result = new ArrayList<>();
+        result = adminMapper.selectList(null);
+        System.out.println(result);
+    }
+    @Test
+    void exitAdmin() {
+        QueryWrapper<AdminBean> queryWrapperAdmin = new QueryWrapper<>();
+        queryWrapperAdmin.eq("username", "zxzxzccc");
+        System.out.println(adminMapper.selectCount(queryWrapperAdmin));
+
+
 
     }
 

@@ -2,8 +2,10 @@ package com.example.sport.Bean;
 
 //import org.springframework.data.annotation.Id;
 
-import java.sql.Timestamp;
+import com.baomidou.mybatisplus.annotation.TableName;
 
+import java.sql.Timestamp;
+@TableName("games")
 public class GamesBean {
 //    @Id
     private int id;

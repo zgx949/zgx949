@@ -2,6 +2,9 @@ package com.example.sport.Bean;
 
 //import org.springframework.data.annotation.Id;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("site_allocation")
 public class SiteAllocationBean {
 //    @Id
     private int id;

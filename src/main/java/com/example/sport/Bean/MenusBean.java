@@ -2,11 +2,22 @@ package com.example.sport.Bean;
 
 //import org.springframework.data.annotation.Id;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("menus")
 public class MenusBean {
 //    @Id
+    @TableId
     private int id;
+    @TableField("name")
     private String  name;
+    @TableField("path")
+    private String  path;
+    @TableField("parent_id")
     private int parentId;
+    @TableField("level_id")
     private int levelId;
 
     public MenusBean() {
