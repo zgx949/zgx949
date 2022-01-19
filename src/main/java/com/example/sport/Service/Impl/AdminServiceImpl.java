@@ -1,8 +1,11 @@
 package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
+import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
 import com.example.sport.Service.AdminService;
@@ -120,7 +123,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<AdminBean> getAdmin(int page, int pageSize) {
-        List<AdminBean> result = adminMapper.selectList(null);
+        List<AdminBean> result = adminMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
         return result;
     }
 }

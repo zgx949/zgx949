@@ -5,6 +5,7 @@ import com.example.sport.Bean.AdminBean;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.CommonApi;
+import com.example.sport.Utils.ParamsFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,22 +49,11 @@ public class Admin {
      */
     @GetMapping("list")
     public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
-        // 解析页面参数
-        int page;
-        int pageSize;
-        try {
-            page = Integer.parseInt(params.get("page").toString());
-        } catch (Exception e) {
-            page = 1;
-        }
-        try {
-            pageSize = Integer.parseInt(params.get("pagesize").toString());
-        } catch (Exception e) {
-            pageSize = 10;
-        }
+        // 解析页面分页参数
+        Map<String, Object> data = ParamsFormat.pageParams(params);
 
         // 分页查询
-        List<AdminBean> admins = adminService.getAdmin(page, pageSize);
+        List<AdminBean> admins = adminService.getAdmin((int)data.get("page"), (int)data.get("pageSize"));
         return CommonApi.success(admins, admins.size());
     }
 
@@ -75,20 +65,8 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("add")
-    public Map<String, Object> insertAdmin(@RequestBody Map<String, Object> data) {
-        // 获取json参数
-        String username = (String) data.get("username");
-        String password = (String) data.get("password");
-        String name = (String) data.get("name");
-        int level = (int) data.get("level");
-        int collegeId = (int) data.get("collegeId");
-
-        // 构建对象
-        AdminBean admin = new AdminBean(username, password, name, level, collegeId);
-
-        // 注册
-        int id = adminService.insertAdmin(admin);
-
+    public Map<String, Object> insertAdmin(@RequestBody AdminBean data) {
+        int id = adminService.insertAdmin(data);
         Map<String, Object> map = new HashMap<>();
         map.put("id", id);
         if (id == -1) {
@@ -109,20 +87,10 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("update")
-    public Map<String, Object> updateAdmin(@RequestBody Map<String, Object> data) {
-        // 获取json参数
-        int id = (int) data.get("id");
-        String username = (String) data.get("username");
-        String password = (String) data.get("password");
-        String name = (String) data.get("name");
-        int level = (int) data.get("level");
-        int collegeId = (int) data.get("collegeId");
-
-        // 构建对象
-        AdminBean admin = new AdminBean(id, username, password, name, level, collegeId);
+    public Map<String, Object> updateAdmin(@RequestBody AdminBean data) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("修改成功数量", adminService.updateAdmin(admin));
+        map.put("修改成功数量", adminService.updateAdmin(data));
         return CommonApi.success(map, 1);
     }
 

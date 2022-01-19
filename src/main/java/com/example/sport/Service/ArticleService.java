@@ -43,7 +43,7 @@ public interface ArticleService {
     * @Author: 左手
     * @Date: 2022-01-18
     */
-    List<ArticleService> getArticle(int page, int pageSize);
+    List<ArticleBean> getArticle(int page, int pageSize);
 
 
     /**

@@ -1,0 +1,24 @@
+package com.example.sport.Config;
+
+
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @program: sport
+ * @description:
+ * @author: 左手
+ * @create: 2022-01-19 15:09
+ **/
+
+@Configuration
+public class MybatisConfiguration {
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        // 分页配置
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        return paginationInterceptor;
+    }
+
+}

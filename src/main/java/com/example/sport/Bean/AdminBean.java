@@ -19,6 +19,7 @@ public class AdminBean {
     private int level;
     @TableField("college_id")
     private int collegeId;
+//    private CollegesBean collegeId;
 
     public AdminBean() {
     }
