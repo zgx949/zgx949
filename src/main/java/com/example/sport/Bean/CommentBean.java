@@ -2,6 +2,8 @@ package com.example.sport.Bean;
 
 //import org.springframework.data.annotation.Id;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.sql.Timestamp;
@@ -9,13 +11,24 @@ import java.sql.Timestamp;
 @TableName("comment")
 public class CommentBean {
 //    @Id
+    @TableId
     private int id;
+    @TableField("article_id")
     private int articleId;
+    @TableField("user_id")
     private int userId;
+    @TableField("text")
     private String text;
+    @TableField("create_time")
     private Timestamp createTime;
 
     public CommentBean() {
+    }
+
+    public CommentBean(int articleId, int userId, String text) {
+        this.articleId = articleId;
+        this.userId = userId;
+        this.text = text;
     }
 
     public CommentBean(int id, int articleId, int userId, String text, Timestamp createTime) {

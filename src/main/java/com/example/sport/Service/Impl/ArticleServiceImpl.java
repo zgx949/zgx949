@@ -9,6 +9,7 @@ import com.example.sport.Mapper.ArticleMapper;
 import com.example.sport.Mapper.CommentMapper;
 import com.example.sport.Service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * @author: 左手
  * @create: 2022-01-19 15:41
  **/
+@Service
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired

@@ -9,7 +9,15 @@ import java.util.Map;
  * @author: 左手
  * @create: 2022-01-19 15:15
  **/
-public class ParamsFormat {
+public class ParamsFormater {
+    /**
+    * @Description: 格式化页面查询参数
+    * @Param: page      页码
+    * @Param: pageSize  页面大小
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-01-19
+    */
     public static Map<String, Object> pageParams(Map<String, Object> data) {
         int page;
         int pageSize;

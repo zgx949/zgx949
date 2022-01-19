@@ -1,13 +1,18 @@
 package com.example.sport.Bean;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 //import org.springframework.data.annotation.Id;
 @TableName("college")
 public class CollegesBean {
 //    @Id
+    @TableId
     private int id;
+    @TableField("name")
     private String name;
+    @TableField("max_person")
     private int maxPerson;
 
     public CollegesBean() {

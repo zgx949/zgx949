@@ -37,6 +37,12 @@ public class CommonApi {
         return common(data, "操作成功", 1, 1);
     }
 
+    public static Map<String, Object> success(String key, int value) {
+        Map<String, Object> data = new HashMap<>();
+        data.put(key, value);
+        return common(data, "操作成功", 1, 1);
+    }
+
     public static Map<String, Object> success(Object data, int count) {
 //        List<Object> result = new ArrayList<>();
 //        result.add(data);
