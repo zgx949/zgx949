@@ -13,6 +13,8 @@ public class MenusBean {
     private int id;
     @TableField("name")
     private String  name;
+    @TableField("icon")
+    private String  icon;
     @TableField("path")
     private String  path;
     @TableField("parent_id")
@@ -20,19 +22,11 @@ public class MenusBean {
     @TableField("level_id")
     private int levelId;
 
-    public MenusBean() {
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-    public MenusBean(int id, String name, int parentId, int levelId) {
+    public MenusBean(int id, String name, String icon, String path, int parentId, int levelId) {
         this.id = id;
         this.name = name;
+        this.icon = icon;
+        this.path = path;
         this.parentId = parentId;
         this.levelId = levelId;
     }
@@ -51,6 +45,22 @@ public class MenusBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public int getParentId() {

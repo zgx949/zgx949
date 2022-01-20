@@ -66,5 +66,11 @@ public class CommonApi {
         return common(result, "非法操作", -1, count);
     }
 
+//    public static Map<String, Object> error(String key, int value) {
+//        Map<String, Object> data = new HashMap<>();
+//        data.put(key, value);
+//        return common(data, "非法操作", -1, 1);
+//    }
+
 
 }

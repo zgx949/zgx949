@@ -68,5 +68,15 @@ public interface AdminService {
      */
     List<AdminBean> getAdmin(int page, int pageSize);
 
+
+    int countAdmin();
+
+    /**
+    * @Description: 是否存在该用户
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-01-20
+    */
     boolean exitAdmin(String username);
 }

@@ -44,6 +44,8 @@ public class AdminServiceImpl implements AdminService {
             // 账号密码正确
             Map data = new HashMap<>();
             data.put("uid", admin.getId());
+            data.put("name", admin.getName());
+            data.put("collegeId", admin.getCollegeId());
             data.put("menus", getMenu(admin.getLevel()));
 
             return data;
@@ -69,25 +71,27 @@ public class AdminServiceImpl implements AdminService {
             if (menu.getParentId() == menu.getId()) {
                 // 如果是顶级菜单
                 Map<String, Object> tempMap = new HashMap<>();
-                tempMap.put("id", menu.getId());
-                tempMap.put("name", menu.getName());
-                tempMap.put("path", menu.getPath());
-                tempMap.put("children", new ArrayList<>());
+                tempMap.put("menuid", menu.getId());
+                tempMap.put("menuname", menu.getName());
+                tempMap.put("icon", menu.getIcon());
+                tempMap.put("url", menu.getPath());
+                tempMap.put("menus", new ArrayList<>());
                 menuList.add(tempMap);
             } else {
                 // 如果是子菜单
                 for (int i = 0; i < menuList.size(); i++) {
                     Map tempMap = (Map)menuList.get(i);
-                    int parentId = (int) tempMap.get("id");
+                    int parentId = (int) tempMap.get("menuid");
 
                     if (menu.getParentId() == parentId) {
                         // 最终要加入的子菜单
                         Map<String, Object> res = new HashMap<>();
-                        res.put("id", menu.getId());
-                        res.put("name", menu.getName());
-                        res.put("path", menu.getPath());
-                        res.put("children", new ArrayList<>());
-                        ((List)(((Map)menuList.get(i)).get("children"))).add(res);
+                        res.put("menuid", menu.getId());
+                        res.put("menuname", menu.getName());
+                        res.put("icon", menu.getIcon());
+                        res.put("url", menu.getPath());
+                        res.put("menus", new ArrayList<>());
+                        ((List)(((Map)menuList.get(i)).get("menus"))).add(res);
                         break;
                     }
 
@@ -125,5 +129,10 @@ public class AdminServiceImpl implements AdminService {
     public List<AdminBean> getAdmin(int page, int pageSize) {
         List<AdminBean> result = adminMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
         return result;
+    }
+
+    @Override
+    public int countAdmin() {
+        return adminMapper.selectCount(null);
     }
 }

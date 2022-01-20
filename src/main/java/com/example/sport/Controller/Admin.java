@@ -27,14 +27,19 @@ public class Admin {
      */
     @PostMapping("login")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
-
-        Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
-        if (res != null) {
-            res.put("res", "登录成功");
-            return CommonApi.success(res, 2);
-        } else {
+        try {
+            Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
+            if (res != null) {
+                res.put("msg", "登录成功");
+                return CommonApi.success(res, 2);
+            } else {
+                return CommonApi.error(null, 1);
+            }
+        } catch (Exception e) {
             return CommonApi.error(null, 1);
         }
+
+
 
     }
 
@@ -52,7 +57,7 @@ public class Admin {
 
         // 分页查询
         List<AdminBean> admins = adminService.getAdmin((int)data.get("page"), (int)data.get("pageSize"));
-        return CommonApi.success(admins, admins.size());
+        return CommonApi.success(admins, adminService.countAdmin());
     }
 
     /**

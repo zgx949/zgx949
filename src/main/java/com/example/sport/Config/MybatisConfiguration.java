@@ -2,6 +2,7 @@ package com.example.sport.Config;
 
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.apache.ibatis.builder.MapperBuilderAssistant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,5 +21,5 @@ public class MybatisConfiguration {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         return paginationInterceptor;
     }
-
 }
+
