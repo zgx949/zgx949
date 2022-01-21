@@ -3,19 +3,15 @@ package com.example.sport;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
-import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
-import com.example.sport.Service.Impl.AdminServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SpringBootTest
 class SportApplicationTests {
@@ -25,6 +21,7 @@ class SportApplicationTests {
 
     @Resource
     private MenusMapper menusMapper;
+
 
     @Test
     void contextLoads() {
@@ -63,8 +60,10 @@ class SportApplicationTests {
         QueryWrapper<AdminBean> queryWrapperAdmin = new QueryWrapper<>();
         queryWrapperAdmin.eq("username", "zxzxzccc");
         System.out.println(adminMapper.selectCount(queryWrapperAdmin));
-
-
+    }
+    @Test
+    public void dynamicsUpdate() {
+        System.out.println(adminMapper.executeQuery("select * from admin"));;
 
     }
 

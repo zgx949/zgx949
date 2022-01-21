@@ -19,6 +19,8 @@ public class AdminBean {
     private int level;
     @TableField("college_id")
     private int collegeId;
+    @TableField("is_delete")
+    private int isDelete;
 //    private CollegesBean collegeId;
 
     public AdminBean() {
@@ -39,6 +41,14 @@ public class AdminBean {
         this.name = name;
         this.level = level;
         this.collegeId = collegeId;
+    }
+
+    public int getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(int isDelete) {
+        this.isDelete = isDelete;
     }
 
     public int getId() {
