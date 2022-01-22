@@ -68,13 +68,13 @@ public class Article {
         return CommonApi.success(articleList, articleList.size());
     }
 
-    @PostMapping("/article/add")
+    @PostMapping("/article/comment/add")
     Map<String, Object> addComment(@RequestBody CommentBean comment) {
         comment.setCreateTime(new Timestamp(new Date().getTime()));
         return CommonApi.success("successCount", articleService.addComment(comment));
     }
 
-    @PostMapping("/article/delete")
+    @PostMapping("/article/comment/delete")
     Map<String, Object> deleteComment(@RequestBody Map<String, Object> data) {
         return CommonApi.success(articleService.deleteComment((int) data.get("id")) > 0? "删除成功": "查无此评论", 1);
     }
