@@ -31,7 +31,9 @@ public class Admin {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
             if (res != null) {
                 res.put("msg", "登录成功");
+//                res.put("token", res.get("uid").toString());
                 return CommonApi.success(res, 2);
+
             } else {
                 return CommonApi.error(null, 1);
             }
