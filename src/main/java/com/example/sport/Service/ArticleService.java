@@ -63,7 +63,7 @@ public interface ArticleService {
     * @Author: 左手
     * @Date: 2022-01-18
     */
-    int insertComment(CommentBean comment);
+    int addComment(CommentBean comment);
 
     /**
     * @Description: 删除评论

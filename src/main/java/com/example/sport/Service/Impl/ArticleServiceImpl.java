@@ -97,7 +97,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Date: 2022-01-19
     */
     @Override
-    public int insertComment(CommentBean comment) {
+    public int addComment(CommentBean comment) {
         return commentMapper.insert(comment);
     }
 

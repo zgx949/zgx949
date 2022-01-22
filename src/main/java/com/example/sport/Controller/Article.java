@@ -1,6 +1,7 @@
 package com.example.sport.Controller;
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.ArticleBean;
+import com.example.sport.Bean.CommentBean;
 import com.example.sport.Service.ArticleService;
 
 import com.example.sport.Utils.CommonApi;
@@ -20,6 +21,11 @@ public class Article {
     @Autowired
     private ArticleService articleService;
 
+    /**
+    * @Description:  文章部分
+    * @Author: 左手
+    * @Date: 2022-01-22
+    */
     @GetMapping("/")
     Map<String, Object> articleList(@RequestParam Map<String, Object> params) {
         Map<String, Object> data = ParamsFormater.pageParams(params);
@@ -40,7 +46,7 @@ public class Article {
     }
 
     @PostMapping("update")
-    public Map<String, Object> updateAdmin(@RequestBody ArticleBean data) {
+    public Map<String, Object> updateArticle(@RequestBody ArticleBean data) {
         Map<String, Object> map = new HashMap<>();
         map.put("修改成功数量", articleService.updateArticle(data));
         return CommonApi.success(map, 1);
@@ -48,7 +54,28 @@ public class Article {
 
 
 
+    /**
+     * @Description:  评论部分
+     * @Author: 左手
+     * @Date: 2022-01-22
+     */
+    @GetMapping("/article/comment")
+    Map<String, Object> commentList(@RequestParam Map<String, Object> params) {
+        Map<String, Object> data = ParamsFormater.pageParams(params);
+        // 分页查询
+        int articleId = (int) params.get("aid");
+        List<CommentBean> articleList = articleService.getComment(articleId, (int)data.get("page"), (int)data.get("pageSize"));
+        return CommonApi.success(articleList, articleList.size());
+    }
 
+    @PostMapping("/article/add")
+    Map<String, Object> addComment(@RequestBody CommentBean comment) {
+        comment.setCreateTime(new Timestamp(new Date().getTime()));
+        return CommonApi.success("successCount", articleService.addComment(comment));
+    }
 
-
+    @PostMapping("/article/delete")
+    Map<String, Object> deleteComment(@RequestBody Map<String, Object> data) {
+        return CommonApi.success(articleService.deleteComment((int) data.get("id")) > 0? "删除成功": "查无此评论", 1);
+    }
 }
