@@ -107,10 +107,6 @@ public class Admin {
     */
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
-        // 获取参数
-        int id = (int) data.get("id");
-
-        int delCount = adminService.deleteAdmin(id);
-        return CommonApi.success(delCount > 0? "删除成功": "查无此人", 1);
+        return CommonApi.success(adminService.deleteAdmin((int) data.get("id")) > 0? "删除成功": "查无此人", 1);
     }
 }

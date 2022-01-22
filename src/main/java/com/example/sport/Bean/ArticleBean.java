@@ -13,6 +13,8 @@ public class ArticleBean {
 //    @Id
     @TableId
     private int id;
+    @TableField("title")
+    private String title;
     @TableField("text")
     private String text;
     @TableField("admin_id")
@@ -23,8 +25,9 @@ public class ArticleBean {
     public ArticleBean() {
     }
 
-    public ArticleBean(int id, String text, int adminId, Timestamp createTime) {
+    public ArticleBean(int id, String title, String text, int adminId, Timestamp createTime) {
         this.id = id;
+        this.title = title;
         this.text = text;
         this.adminId = adminId;
         this.createTime = createTime;
@@ -36,6 +39,14 @@ public class ArticleBean {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getText() {
