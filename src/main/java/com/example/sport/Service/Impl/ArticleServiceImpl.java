@@ -89,6 +89,11 @@ public class ArticleServiceImpl implements ArticleService {
         return articleMapper.selectById(id);
     }
 
+    @Override
+    public int countArticle() {
+        return articleMapper.selectCount(null);
+    }
+
     /**
     * @Description: 添加评论
     * @Param:

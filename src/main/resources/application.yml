@@ -5,9 +5,12 @@ spring:
   # 配置数据源
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://sport.zswk.xyz:3306/sport?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: sport
-    password: sport
+#    url: jdbc:mysql://sport.zswk.xyz:3306/sport?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/sport1?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
+    username: root
+#    mysql8以下的密码不需要单引号
+#    password: sport
+    password: 'zgx949'
     type: com.alibaba.druid.pool.DruidDataSource
 # mybatis-plus相关配置
 mybatis-plus:

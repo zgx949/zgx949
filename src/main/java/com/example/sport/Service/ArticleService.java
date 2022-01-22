@@ -83,4 +83,5 @@ public interface ArticleService {
     */
     List<CommentBean> getComment(int articleId, int page, int pageSize);
 
+    int countArticle();
 }
