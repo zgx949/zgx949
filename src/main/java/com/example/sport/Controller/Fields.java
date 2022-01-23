@@ -39,7 +39,7 @@ public class Fields {
             map.put("msg", "用户已存在");
             return CommonApi.error(map);
         } else {
-            map.put("msg", "注册成功");
+            map.put("msg", "添加成功");
             return CommonApi.success(map, 1);
         }
 
@@ -50,7 +50,7 @@ public class Fields {
     public Map<String, Object> updateFields(@RequestBody FieldsBean data) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("修改成功数量", fieldsService.updateField(data));
+        map.put("successCount", fieldsService.updateField(data));
         return CommonApi.success(map, 1);
     }
 
