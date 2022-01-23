@@ -1,13 +1,17 @@
 package com.example.sport.Bean;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 //import org.springframework.data.annotation.Id;
 @TableName("nums")
 public class NumsBean {
-//    @Id
+    @TableId
     private int id;
+    @TableField("id_num")
     private int idNum;
+    @TableField("college_id")
     private int collegeId;
 
     public NumsBean() {

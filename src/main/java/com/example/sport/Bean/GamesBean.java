@@ -2,21 +2,32 @@ package com.example.sport.Bean;
 
 //import org.springframework.data.annotation.Id;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.sql.Timestamp;
 @TableName("games")
 public class GamesBean {
-//    @Id
+    @TableId
     private int id;
+    @TableField("game_name")
     private String gameName;
+    @TableField("next_game")
     private int nextGame;
+    @TableField("gender")
     private int gender;
+    @TableField("field_id")
     private int fieldId;
+    @TableField("max_person")
     private int maxPerson;
+    @TableField("status")
     private int status;
+    @TableField("start_time")
     private Timestamp startTime;
+    @TableField("end_time")
     private Timestamp endTime;
+    @TableField("create_time")
     private Timestamp createTime;
 
     public GamesBean() {
