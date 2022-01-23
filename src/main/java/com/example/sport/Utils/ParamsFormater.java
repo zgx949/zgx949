@@ -29,7 +29,7 @@ public class ParamsFormater {
         try {
             pageSize = Integer.parseInt(data.get("pagesize").toString());
         } catch (Exception e) {
-            pageSize = 10;
+            pageSize = 5;
         }
         Map<String, Object> result = new HashMap<>();
         result.put("page", page);
