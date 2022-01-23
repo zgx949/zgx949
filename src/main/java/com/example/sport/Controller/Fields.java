@@ -1,7 +1,7 @@
 package com.example.sport.Controller;
 
-import com.example.sport.Bean.AdminBean;
-import com.example.sport.Service.AdminService;
+import com.example.sport.Bean.FieldsBean;
+import com.example.sport.Service.FieldsService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +17,22 @@ import java.util.Map;
 public class Fields {
 
     @Autowired
-    private AdminService adminService;
+    private FieldsService fieldsService;
 
     @GetMapping("")
-    public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
+    public Map<String, Object> getFields(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
         Map<String, Object> data = ParamsFormater.pageParams(params);
 
         // 分页查询
-        List<AdminBean> admins = adminService.getAdmin((int)data.get("page"), (int)data.get("pageSize"));
-        return CommonApi.success(admins, adminService.countAdmin());
+        List<FieldsBean> fields = fieldsService.getField((int)data.get("page"), (int)data.get("pageSize"));
+        return CommonApi.success(fields, fieldsService.countFields());
     }
 
 
     @PostMapping("add")
-    public Map<String, Object> insertAdmin(@RequestBody AdminBean data) {
-        int id = adminService.insertAdmin(data);
+    public Map<String, Object> insertFields(@RequestBody FieldsBean data) {
+        int id = fieldsService.insertField(data);
         Map<String, Object> map = new HashMap<>();
         map.put("id", id);
         if (id == -1) {
@@ -47,10 +47,10 @@ public class Fields {
 
 
     @PostMapping("update")
-    public Map<String, Object> updateAdmin(@RequestBody AdminBean data) {
+    public Map<String, Object> updateFields(@RequestBody FieldsBean data) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("修改成功数量", adminService.updateAdmin(data));
+        map.put("修改成功数量", fieldsService.updateField(data));
         return CommonApi.success(map, 1);
     }
 
@@ -58,6 +58,6 @@ public class Fields {
 
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
-        return CommonApi.success(adminService.deleteAdmin((int) data.get("id")) > 0? "删除成功": "查无此人", 1);
+        return CommonApi.success("successCount", fieldsService.delField((int) data.get("id")));
     }
 }

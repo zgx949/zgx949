@@ -41,4 +41,6 @@ public interface FieldsService {
     * @Date: 2022-01-18
     */
     List<FieldsBean> getField(int page, int pageSize);
+
+    int countFields();
 }
