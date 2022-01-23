@@ -12,7 +12,7 @@ public interface CollegesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int insertField(CollegesBean field);
+    int insertCollege(CollegesBean college);
 
 
     /**
@@ -22,7 +22,7 @@ public interface CollegesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int delField(int id);
+    int delCollege(int id);
 
     /**
      * @Description: 修改
@@ -40,7 +40,7 @@ public interface CollegesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    List<CollegesBean> getField(int page, int pageSize);
+    List<CollegesBean> getCollege(int page, int pageSize);
 
     int countColleges();
 }

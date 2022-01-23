@@ -28,8 +28,8 @@ public class CollegesServiceImpl implements CollegesService {
      * @Date: 2022-01-23
      */
     @Override
-    public int insertField(CollegesBean field) {
-        return collegesMapper.insert(field);
+    public int insertCollege(CollegesBean college) {
+        return collegesMapper.insert(college);
     }
 
     /**
@@ -40,7 +40,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Date: 2022-01-23
      */
     @Override
-    public int delField(int id) {
+    public int delCollege(int id) {
         return collegesMapper.deleteById(id);
     }
 
@@ -64,7 +64,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Date: 2022-01-23
      */
     @Override
-    public List<CollegesBean> getField(int page, int pageSize) {
+    public List<CollegesBean> getCollege(int page, int pageSize) {
         return collegesMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
     }
 

@@ -28,8 +28,8 @@ public class GamesServiceImpl implements GamesService {
     * @Date: 2022-01-23
     */
     @Override
-    public int insertField(GamesBean field) {
-        return gamesMapper.insert(field);
+    public int insertGame(GamesBean game) {
+        return gamesMapper.insert(game);
     }
 
     /**
@@ -40,7 +40,7 @@ public class GamesServiceImpl implements GamesService {
     * @Date: 2022-01-23
     */
     @Override
-    public int delField(int id) {
+    public int delGame(int id) {
         return gamesMapper.deleteById(id);
     }
 
@@ -52,8 +52,8 @@ public class GamesServiceImpl implements GamesService {
     * @Date: 2022-01-23
     */
     @Override
-    public int updateField(GamesBean field) {
-        return gamesMapper.updateById(field);
+    public int updateGame(GamesBean game) {
+        return gamesMapper.updateById(game);
     }
 
     /**
@@ -64,7 +64,7 @@ public class GamesServiceImpl implements GamesService {
     * @Date: 2022-01-23
     */
     @Override
-    public List<GamesBean> getField(int page, int pageSize) {
+    public List<GamesBean> getGame(int page, int pageSize) {
         return gamesMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
     }
 

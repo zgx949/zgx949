@@ -12,7 +12,7 @@ public interface GamesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int insertField(GamesBean field);
+    int insertGame(GamesBean game);
 
 
     /**
@@ -22,7 +22,7 @@ public interface GamesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int delField(int id);
+    int delGame(int id);
 
     /**
      * @Description: 修改
@@ -31,7 +31,7 @@ public interface GamesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    int updateField(GamesBean field);
+    int updateGame(GamesBean game);
 
     /**
      * @Description: 查询
@@ -40,7 +40,7 @@ public interface GamesService {
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    List<GamesBean> getField(int page, int pageSize);
+    List<GamesBean> getGame(int page, int pageSize);
 
     int countGames();
 }

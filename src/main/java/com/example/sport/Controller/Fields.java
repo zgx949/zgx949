@@ -7,6 +7,8 @@ import com.example.sport.Utils.ParamsFormater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,17 +34,7 @@ public class Fields {
 
     @PostMapping("add")
     public Map<String, Object> insertFields(@RequestBody FieldsBean data) {
-        int id = fieldsService.insertField(data);
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", id);
-        if (id == -1) {
-            map.put("msg", "用户已存在");
-            return CommonApi.error(map);
-        } else {
-            map.put("msg", "添加成功");
-            return CommonApi.success(map, 1);
-        }
-
+        return CommonApi.success("successCount", fieldsService.insertField(data));
     }
 
 

@@ -7,6 +7,8 @@ import com.example.sport.Utils.ParamsFormater;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,23 +27,15 @@ public class Games {
         Map<String, Object> data = ParamsFormater.pageParams(params);
 
         // 分页查询
-        List<GamesBean> games = gamesService.getField((int)data.get("page"), (int)data.get("pageSize"));
+        List<GamesBean> games = gamesService.getGame((int)data.get("page"), (int)data.get("pageSize"));
         return CommonApi.success(games, gamesService.countGames());
     }
 
 
     @PostMapping("add")
     public Map<String, Object> insertGames(@RequestBody GamesBean data) {
-        int id = gamesService.insertField(data);
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", id);
-        if (id == -1) {
-            map.put("msg", "用户已存在");
-            return CommonApi.error(map);
-        } else {
-            map.put("msg", "添加成功");
-            return CommonApi.success(map, 1);
-        }
+        data.setCreateTime(new Timestamp(new Date().getTime()));
+        return CommonApi.success("successCount", gamesService.insertGame(data));
 
     }
 
@@ -50,7 +44,7 @@ public class Games {
     public Map<String, Object> updateGames(@RequestBody GamesBean data) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("successCount", gamesService.updateField(data));
+        map.put("successCount", gamesService.updateGame(data));
         return CommonApi.success(map, 1);
     }
 
@@ -58,6 +52,6 @@ public class Games {
 
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
-        return CommonApi.success("successCount", gamesService.delField((int) data.get("id")));
+        return CommonApi.success("successCount", gamesService.delGame((int) data.get("id")));
     }
 }
