@@ -6,38 +6,41 @@ import java.util.List;
 
 public interface CollegesService {
     /**
-     * @Description: 增加一个学院
-     * @Param: 学院信息实体
-     * @return: 增加个数
-     * @Author: 左手
-     * @Date: 2022-01-18
-     */
-    int insertCollege(CollegesBean college);
-
-    /**
-     * @Description: 删除一个学院信息
-     * @Param: id
-     * @return: 删除个数
-     * @Author: 左手
-     * @Date: 2022-01-18
-     */
-    int delCollege(int id);
-
-    /**
-     * @Description: 修改学院信息
-     * @Param: 实体
-     * @return: 修改的个数
-     * @Author: 左手
-     * @Date: 2022-01-18
-     */
-    int updateCollege(CollegesBean college);
-
-    /**
-     * @Description: 分页获取学院信息
+     * @Description: 增加
      * @Param:
      * @return:
      * @Author: 左手
      * @Date: 2022-01-18
      */
-    List<CollegesBean> getColleges(int page, int pageSize);
+    int insertField(CollegesBean field);
+
+
+    /**
+     * @Description: 删除
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-01-18
+     */
+    int delField(int id);
+
+    /**
+     * @Description: 修改
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-01-18
+     */
+    int updateField(CollegesBean field);
+
+    /**
+     * @Description: 查询
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-01-18
+     */
+    List<CollegesBean> getField(int page, int pageSize);
+
+    int countColleges();
 }
