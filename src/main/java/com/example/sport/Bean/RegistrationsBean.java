@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import java.sql.Timestamp;
+
 //import org.springframework.data.annotation.Id;
 @TableName("registrations")
 public class RegistrationsBean {
@@ -17,6 +19,16 @@ public class RegistrationsBean {
     private int status;
     @TableField("reviewer_id")
     private int reviewerId;
+    @TableField("create_time")
+    private Timestamp createTime;
+
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+    }
 
     public RegistrationsBean() {
     }
