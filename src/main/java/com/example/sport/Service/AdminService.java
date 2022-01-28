@@ -2,6 +2,7 @@ package com.example.sport.Service;
 
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
+import com.example.sport.Bean.menuOptionsBean;
 
 import java.util.List;
 import java.util.Map;
@@ -79,4 +80,13 @@ public interface AdminService {
     * @Date: 2022-01-20
     */
     boolean exitAdmin(String username);
+
+    /**
+    * @Description: 获取菜单的选项映射
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-01-28
+    */
+    List<menuOptionsBean> adminOptions();
 }

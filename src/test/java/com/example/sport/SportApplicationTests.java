@@ -64,7 +64,18 @@ class SportApplicationTests {
     @Test
     public void dynamicsUpdate() {
 
-        adminMapper.executeQuery("SELECT admin.id, admin.username, admin.password, admin.name, admin.level, colleges.name as 'college'  FROM admin LEFT JOIN JOIN colleges ON colleges.id=admin.college_id LIMIT 5 OFFSET 0")
+        adminMapper.executeQuery("SELECT " +
+                "admin.id, " +
+                "admin.username, " +
+                "admin.password, " +
+                "admin.name, " +
+                "admin.level, " +
+                "colleges.name " +
+                    "as " +
+                        "'college'  " +
+                "FROM admin " +
+                "LEFT JOIN JOIN colleges ON colleges.id=admin.college_id " +
+                "LIMIT 5 OFFSET 0")
                 .forEach(System.out::println);
 
     }

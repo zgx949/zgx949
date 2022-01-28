@@ -19,4 +19,5 @@ public interface AdminMapper extends BaseMapper<AdminBean> {
     @Select({"${sql}"})
     @ResultType(ArrayList.class)
     List<AdminBean> executeQuery(@Param("sql") String sql);
+
 }

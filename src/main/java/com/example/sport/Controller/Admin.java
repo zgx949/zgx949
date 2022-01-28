@@ -1,6 +1,7 @@
 package com.example.sport.Controller;
 
 import com.example.sport.Bean.AdminBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
@@ -110,5 +111,10 @@ public class Admin {
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", adminService.deleteAdmin((int) data.get("id")));
+    }
+
+    @GetMapping("options")
+    public List<menuOptionsBean> getOptions() {
+        return adminService.adminOptions();
     }
 }

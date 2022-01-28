@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
@@ -133,5 +134,15 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public int countAdmin() {
         return adminMapper.selectCount(null);
+    }
+
+    @Override
+    public List<menuOptionsBean> adminOptions() {
+        List <AdminBean> admins = adminMapper.selectList(null);
+        List<menuOptionsBean> menuOptionsBeanList = new ArrayList<>();
+        for (AdminBean admin: admins) {
+            menuOptionsBeanList.add(new menuOptionsBean(admin.getName(), admin.getId()));
+        }
+        return menuOptionsBeanList;
     }
 }
