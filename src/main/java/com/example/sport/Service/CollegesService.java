@@ -1,6 +1,7 @@
 package com.example.sport.Service;
 
 import com.example.sport.Bean.CollegesBean;
+import com.example.sport.Bean.menuOptionsBean;
 
 import java.util.List;
 
@@ -43,4 +44,6 @@ public interface CollegesService {
     List<CollegesBean> getCollege(int page, int pageSize);
 
     int countColleges();
+
+    List<menuOptionsBean> collegesOptions();
 }

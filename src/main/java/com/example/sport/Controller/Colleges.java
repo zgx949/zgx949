@@ -1,6 +1,7 @@
 package com.example.sport.Controller;
 
 import com.example.sport.Bean.CollegesBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.CollegesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/college")
+@RequestMapping("/colleges")
 public class Colleges {
 
     @Autowired
@@ -48,5 +49,10 @@ public class Colleges {
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", collegesService.delCollege((int) data.get("id")));
+    }
+
+    @GetMapping("options")
+    public List<menuOptionsBean> getOptions() {
+        return collegesService.collegesOptions();
     }
 }

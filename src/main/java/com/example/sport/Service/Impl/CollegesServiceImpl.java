@@ -1,12 +1,15 @@
 package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.CollegesBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Mapper.CollegesMapper;
 import com.example.sport.Service.CollegesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -78,5 +81,15 @@ public class CollegesServiceImpl implements CollegesService {
     @Override
     public int countColleges() {
         return collegesMapper.selectCount(null);
+    }
+
+    @Override
+    public List<menuOptionsBean> collegesOptions() {
+        List <CollegesBean> colleges = collegesMapper.selectList(null);
+        List<menuOptionsBean> menuOptionsBeanList = new ArrayList<>();
+        for (CollegesBean college: colleges) {
+            menuOptionsBeanList.add(new menuOptionsBean(college.getName(), college.getId()));
+        }
+        return menuOptionsBeanList;
     }
 }

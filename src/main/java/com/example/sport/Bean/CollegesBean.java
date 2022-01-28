@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 //import org.springframework.data.annotation.Id;
-@TableName("college")
+@TableName("colleges")
 public class CollegesBean {
 //    @Id
     @TableId
