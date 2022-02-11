@@ -73,7 +73,10 @@ public class ArticleServiceImpl implements ArticleService {
     */
     @Override
     public List<ArticleBean> getArticle(int page, int pageSize) {
-        return articleMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
+        QueryWrapper<ArticleBean> queryWrapper = new QueryWrapper<>();
+        // 按照时间逆序输出
+        queryWrapper.orderByDesc("create_time");
+        return articleMapper.selectPage(new Page<>(page, pageSize), queryWrapper).getRecords();
     }
 
     /**

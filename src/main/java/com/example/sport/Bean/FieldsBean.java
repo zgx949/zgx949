@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //import org.springframework.data.annotation.Id;
 @TableName("fields")
 public class FieldsBean {
@@ -24,6 +27,15 @@ public class FieldsBean {
         this.name = name;
         this.maxPerson = maxPerson;
         this.parentId = parentId;
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> data = new HashMap<>();
+        data.put("id", this.id);
+        data.put("name", this.name);
+        data.put("maxPerson", this.maxPerson);
+        data.put("parentId", this.parentId);
+        return data;
     }
 
     public int getId() {

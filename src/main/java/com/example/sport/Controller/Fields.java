@@ -25,9 +25,13 @@ public class Fields {
     public Map<String, Object> getFields(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
         Map<String, Object> data = ParamsFormater.pageParams(params);
+        int parentId = -1;
+        try {
+            parentId = Integer.parseInt(params.get("parentId").toString());
+        } catch (Exception ignored){}
 
         // 分页查询
-        List<FieldsBean> fields = fieldsService.getField((int)data.get("page"), (int)data.get("pageSize"));
+        List<FieldsBean> fields = fieldsService.getField(parentId, (int)data.get("page"), (int)data.get("pageSize"));
         return CommonApi.success(fields, fieldsService.countFields());
     }
 
@@ -51,5 +55,10 @@ public class Fields {
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", fieldsService.delField((int) data.get("id")));
+    }
+
+    @GetMapping("tree")
+    public List<Map<String, Object>> getTree() {
+        return fieldsService.fieldTree();
     }
 }
