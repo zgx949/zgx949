@@ -4,9 +4,12 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.example.sport.Bean.AdminBean;
+import com.example.sport.Bean.UserBean;
 import com.example.sport.Service.AdminService;
+import com.example.sport.Service.UserService;
 import com.example.sport.Utils.JwtUtil;
 import com.example.sport.annotation.TokenRequired;
+import com.example.sport.annotation.UserTokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -25,6 +28,10 @@ import java.lang.reflect.Method;
 public class AuthenticationInterceptor implements HandlerInterceptor {
     @Autowired
     AdminService adminService;
+    @Autowired
+    UserService userService;
+
+
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
@@ -37,28 +44,58 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         HandlerMethod handlerMethod = (HandlerMethod) object;
         Method method = handlerMethod.getMethod();
         //检查有没有需要用户权限的注解
+        int type = 0;   // 0为admin验证，1为user验证
         if (method.isAnnotationPresent(TokenRequired.class)) {
-            TokenRequired adminLoginToken = method.getAnnotation(TokenRequired.class);
-            if (adminLoginToken.required()) {
-                // 执行认证
-                if (token == null) {
-                    throw new RuntimeException("无token，请重新登录");
-                }
-                // 获取 token 中的 admin id
-                String adminId;
-                try {
-                    adminId = JWT.decode(token).getClaim("adminId").asString();
-                } catch (JWTDecodeException j) {
-                    throw new RuntimeException("401");
-                }
-                AdminBean admin = adminService.findAdminById(Integer.parseInt(adminId));
-                if (admin == null) {
+            // 管理员
+            type = 1;
+            TokenRequired LoginToken = method.getAnnotation(TokenRequired.class);
+            if (!LoginToken.required()) {
+                return false;
+            }
+        } else if (method.isAnnotationPresent(UserTokenRequired.class)) {
+            // 用户
+            type = 2;
+            UserTokenRequired LoginToken = method.getAnnotation(UserTokenRequired.class);
+            if (!LoginToken.required()) {
+                return false;
+            }
+        }
+
+
+        if (type != 0) {
+            // 执行认证
+            if (token == null) {
+                throw new RuntimeException("无token，请重新登录");
+            }
+            // 获取 token 中的 admin或者user的id
+            String id;
+            try {
+                id = JWT.decode(token).getClaim("id").asString();
+            } catch (JWTDecodeException j) {
+                throw new RuntimeException("401");
+            }
+            if (type == 1) {
+                AdminBean person = adminService.findAdminById(Integer.parseInt(id));
+                if (person == null) {
                     throw new RuntimeException("用户不存在，请重新登录");
                 }
-
                 // 验证 token
                 try {
-                    if (!JwtUtil.verity(token, admin.getPassword())) {
+                    if (!JwtUtil.verity(token, person.getPassword())) {
+                        throw new RuntimeException("无效的令牌");
+                    }
+                } catch (JWTVerificationException e) {
+                    throw new RuntimeException("401");
+                }
+                return true;
+            } else if(type == 2) {
+                UserBean person = userService.findUserById(Integer.parseInt(id));
+                if (person == null) {
+                    throw new RuntimeException("用户不存在，请重新登录");
+                }
+                // 验证 token
+                try {
+                    if (!JwtUtil.verity(token, person.getPassword())) {
                         throw new RuntimeException("无效的令牌");
                     }
                 } catch (JWTVerificationException e) {
@@ -66,6 +103,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 }
                 return true;
             }
+
         }
         return true;
     }

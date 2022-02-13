@@ -6,7 +6,7 @@ import java.lang.annotation.Target;
 
 
 /**
-* @Description: 管理员Token验证注解定义
+* @Description: 用户Token验证注解定义
 * @Param:
 * @return:
 * @Author: 左手
@@ -14,6 +14,6 @@ import java.lang.annotation.Target;
 */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TokenRequired {
+public @interface UserTokenRequired {
     boolean required() default true;
 }

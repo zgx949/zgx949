@@ -5,6 +5,7 @@ import com.example.sport.Service.UserService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
 import com.example.sport.annotation.TokenRequired;
+import com.example.sport.annotation.UserTokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
