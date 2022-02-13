@@ -7,9 +7,11 @@ import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.UserBean;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Service.UserService;
+import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.JwtUtil;
 import com.example.sport.annotation.TokenRequired;
 import com.example.sport.annotation.UserTokenRequired;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -17,7 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * @program: sport
@@ -30,7 +36,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     AdminService adminService;
     @Autowired
     UserService userService;
-
 
 
     @Override
@@ -65,7 +70,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         if (type != 0) {
             // 执行认证
             if (token == null) {
-                throw new RuntimeException("无token，请重新登录");
+//                throw new RuntimeException("无token，请重新登录");
+                falseResult(httpServletResponse);
             }
             // 获取 token 中的 admin或者user的id
             String id;
@@ -77,29 +83,41 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             if (type == 1) {
                 AdminBean person = adminService.findAdminById(Integer.parseInt(id));
                 if (person == null) {
-                    throw new RuntimeException("用户不存在，请重新登录");
+                    falseResult(httpServletResponse);
+//                    throw new RuntimeException("用户不存在，请重新登录");
+                    return false;
                 }
                 // 验证 token
                 try {
                     if (!JwtUtil.verity(token, person.getPassword())) {
-                        throw new RuntimeException("无效的令牌");
+                        falseResult(httpServletResponse);
+                        return false;
+//                        throw new RuntimeException("无效的令牌");
                     }
                 } catch (JWTVerificationException e) {
-                    throw new RuntimeException("401");
+                    falseResult(httpServletResponse);
+//                    throw new RuntimeException("401");
+                    return false;
                 }
                 return true;
-            } else if(type == 2) {
+            } else if (type == 2) {
                 UserBean person = userService.findUserById(Integer.parseInt(id));
                 if (person == null) {
-                    throw new RuntimeException("用户不存在，请重新登录");
+                    falseResult(httpServletResponse);
+                    return false;
+//                    throw new RuntimeException("用户不存在，请重新登录");
                 }
                 // 验证 token
                 try {
                     if (!JwtUtil.verity(token, person.getPassword())) {
-                        throw new RuntimeException("无效的令牌");
+                        falseResult(httpServletResponse);
+                        return false;
+//                        throw new RuntimeException("无效的令牌");
                     }
                 } catch (JWTVerificationException e) {
-                    throw new RuntimeException("401");
+                    falseResult(httpServletResponse);
+                    return false;
+//                    throw new RuntimeException("401");
                 }
                 return true;
             }
@@ -117,4 +135,14 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
 
     }
+
+    public void falseResult(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
+        Map<String, Object> resultBody = CommonApi.error("msg", "无效token");
+        ObjectMapper objectMapper = new ObjectMapper();
+        response.getWriter().println(objectMapper.writeValueAsString(resultBody));
+    }
+
 }
+
