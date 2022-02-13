@@ -5,6 +5,7 @@ import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,6 +55,7 @@ public class Admin {
      * @Date: 2022-01-18
      */
     @GetMapping("list")
+    @TokenRequired
     public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
         Map<String, Object> data = ParamsFormater.pageParams(params);
@@ -71,6 +73,7 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("add")
+    @TokenRequired
     public Map<String, Object> insertAdmin(@RequestBody AdminBean data) {
         int id = adminService.insertAdmin(data);
         Map<String, Object> map = new HashMap<>();
@@ -93,6 +96,7 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("update")
+    @TokenRequired
     public Map<String, Object> updateAdmin(@RequestBody AdminBean data) {
 
         Map<String, Object> map = new HashMap<>();
@@ -109,11 +113,13 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("delete")
+    @TokenRequired
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", adminService.deleteAdmin((int) data.get("id")));
     }
 
     @GetMapping("options")
+    @TokenRequired
     public List<menuOptionsBean> getOptions() {
         return adminService.adminOptions();
     }

@@ -71,4 +71,13 @@ public interface UserService {
      * @Date: 2022-01-20
      */
     boolean exitUser(String username);
+
+    /**
+    * @Description: 通过ID查询用户
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-02-13
+    */
+    UserBean findUserById(int id);
 }

@@ -89,4 +89,13 @@ public interface AdminService {
     * @Date: 2022-01-28
     */
     List<menuOptionsBean> adminOptions();
+
+    /**
+    * @Description: 根据ID查询管理员
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-02-13
+    */
+    AdminBean findAdminById(int id);
 }

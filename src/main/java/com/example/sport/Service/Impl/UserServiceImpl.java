@@ -9,6 +9,7 @@ import com.example.sport.Controller.User;
 import com.example.sport.Mapper.UserMapper;
 import com.example.sport.Mapper.MenusMapper;
 import com.example.sport.Service.UserService;
+import com.example.sport.Utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +30,20 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
-
     @Autowired
     private MenusMapper menusMapper;
+
+    /**
+     * @Description: 通过ID查询用户
+     * @Param: int id 用户ID
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-02-13
+     */
+    @Override
+    public UserBean findUserById(int id) {
+        return userMapper.selectById(id);
+    }
 
     @Override
     public Map<String, Object> loginUser(String username, String password) {
@@ -42,10 +54,13 @@ public class UserServiceImpl implements UserService {
         UserBean user = userMapper.selectOne(queryWrapperUser);
         if (user.getPassword().equals(password)) {
             // 账号密码正确
-            Map data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>();
             data.put("uid", user.getId());
             data.put("name", user.getRealName());
             data.put("collegeId", user.getcollegeId());
+
+            String token = JwtUtil.sign(user.getUsername(), String.valueOf(user.getId()),user.getPassword());
+            data.put("token", token);
             return data;
         } else {
             // 账号密码错误
@@ -80,8 +95,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserBean> getUser(int page, int pageSize) {
-        List<UserBean> result = userMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
-        return result;
+        return userMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
     }
 
     @Override

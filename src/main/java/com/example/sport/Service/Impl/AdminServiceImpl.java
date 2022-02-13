@@ -10,6 +10,7 @@ import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
 import com.example.sport.Service.AdminService;
+import com.example.sport.Utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,11 +44,13 @@ public class AdminServiceImpl implements AdminService {
         AdminBean admin = adminMapper.selectOne(queryWrapperAdmin);
         if (admin.getPassword().equals(password)) {
             // 账号密码正确
-            Map data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>();
             data.put("uid", admin.getId());
             data.put("name", admin.getName());
             data.put("collegeId", admin.getCollegeId());
             data.put("menus", getMenu(admin.getLevel()));
+            String token = JwtUtil.sign(admin.getUsername(), String.valueOf(admin.getId()), admin.getPassword());
+            data.put("token", token);
 
             return data;
         } else {
@@ -144,5 +147,18 @@ public class AdminServiceImpl implements AdminService {
             menuOptionsBeanList.add(new menuOptionsBean(admin.getName(), admin.getId()));
         }
         return menuOptionsBeanList;
+    }
+
+    /**
+     * @param id
+     * @Description: 根据ID查询管理员
+     * @Param:
+     * @return:
+     * @Author: 左手
+     * @Date: 2022-02-13
+     */
+    @Override
+    public AdminBean findAdminById(int id) {
+        return adminMapper.selectById(id);
     }
 }
