@@ -5,6 +5,7 @@ import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.CollegesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ public class Colleges {
     private CollegesService collegesService;
 
     @GetMapping("")
+    @TokenRequired
     public Map<String, Object> getColleges(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
         Map<String, Object> data = ParamsFormater.pageParams(params);
@@ -32,11 +34,12 @@ public class Colleges {
 
 
     @PostMapping("add")
+    @TokenRequired
     public Map<String, Object> insertColleges(@RequestBody CollegesBean data) {
         return CommonApi.success("successCount", collegesService.insertCollege(data));
     }
 
-
+    @TokenRequired
     @PostMapping("update")
     public Map<String, Object> updateColleges(@RequestBody CollegesBean data) {
 
@@ -45,7 +48,7 @@ public class Colleges {
         return CommonApi.success(map, 1);
     }
 
-
+    @TokenRequired
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", collegesService.delCollege((int) data.get("id")));

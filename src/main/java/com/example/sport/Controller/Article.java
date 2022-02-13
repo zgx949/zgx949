@@ -5,6 +5,7 @@ import com.example.sport.Service.ArticleService;
 
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,7 @@ public class Article {
     * @Date: 2022-01-22
     */
     @PostMapping("add")
+    @TokenRequired
     Map<String, Object> addArticle(@RequestBody ArticleBean article) {
         article.setCreateTime(new Timestamp(new Date().getTime()));
         return CommonApi.success("successCount", articleService.addArticle(article));
@@ -55,6 +57,7 @@ public class Article {
     * @Date: 2022-01-22
     */
     @PostMapping("delete")
+    @TokenRequired
     Map<String, Object> deleteArticle(@RequestBody Map<String, Object> data) {
         return CommonApi.success(articleService.delArticle((int) data.get("id")) > 0? "删除成功": "查无此文章", 1);
     }
@@ -67,6 +70,7 @@ public class Article {
     * @Date: 2022-01-22
     */
     @PostMapping("update")
+    @TokenRequired
     public Map<String, Object> updateArticle(@RequestBody ArticleBean data) {
         Map<String, Object> map = new HashMap<>();
         map.put("修改成功数量", articleService.updateArticle(data));

@@ -4,6 +4,7 @@ import com.example.sport.Bean.GamesBean;
 import com.example.sport.Service.GamesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class Games {
         return CommonApi.success(games, gamesService.countGames());
     }
 
-
+    @TokenRequired
     @PostMapping("add")
     public Map<String, Object> insertGames(@RequestBody GamesBean data) {
         data.setCreateTime(new Timestamp(new Date().getTime()));
@@ -39,7 +40,7 @@ public class Games {
 
     }
 
-
+    @TokenRequired
     @PostMapping("update")
     public Map<String, Object> updateGames(@RequestBody GamesBean data) {
 
@@ -49,7 +50,7 @@ public class Games {
     }
 
 
-
+    @TokenRequired
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", gamesService.delGame((int) data.get("id")));
