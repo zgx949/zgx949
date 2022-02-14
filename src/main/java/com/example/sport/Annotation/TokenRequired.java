@@ -1,4 +1,4 @@
-package com.example.sport.annotation;
+package com.example.sport.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -6,7 +6,7 @@ import java.lang.annotation.Target;
 
 
 /**
-* @Description: 用户Token验证注解定义
+* @Description: 管理员Token验证注解定义
 * @Param:
 * @return:
 * @Author: 左手
@@ -14,6 +14,6 @@ import java.lang.annotation.Target;
 */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UserTokenRequired {
+public @interface TokenRequired {
     boolean required() default true;
 }

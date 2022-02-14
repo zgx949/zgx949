@@ -9,8 +9,8 @@ import com.example.sport.Service.AdminService;
 import com.example.sport.Service.UserService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.JwtUtil;
-import com.example.sport.annotation.TokenRequired;
-import com.example.sport.annotation.UserTokenRequired;
+import com.example.sport.Annotation.TokenRequired;
+import com.example.sport.Annotation.UserTokenRequired;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Map;
 
 

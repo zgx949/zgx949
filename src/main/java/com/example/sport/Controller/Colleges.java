@@ -5,7 +5,7 @@ import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.CollegesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
-import com.example.sport.annotation.TokenRequired;
+import com.example.sport.Annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

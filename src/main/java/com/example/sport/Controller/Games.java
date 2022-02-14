@@ -4,7 +4,7 @@ import com.example.sport.Bean.GamesBean;
 import com.example.sport.Service.GamesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
-import com.example.sport.annotation.TokenRequired;
+import com.example.sport.Annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
