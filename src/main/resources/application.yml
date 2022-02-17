@@ -12,6 +12,10 @@ spring:
 #    password: sport
     password: 'zgx949'
     type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 8.134.216.66
+    port: 6379
+    password: zgx949
 # mybatis-plus相关配置
 mybatis-plus:
   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）

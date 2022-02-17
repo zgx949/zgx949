@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @program: sport
- * @description:
+ * @description: 分页拦截器
  * @author: 左手
  * @create: 2022-01-19 15:09
  **/

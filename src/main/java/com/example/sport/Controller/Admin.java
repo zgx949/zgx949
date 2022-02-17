@@ -33,7 +33,6 @@ public class Admin {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
             if (res != null) {
                 res.put("msg", "登录成功");
-//                res.put("token", res.get("uid").toString());
                 return CommonApi.success(res, 2);
 
             } else {
@@ -118,6 +117,13 @@ public class Admin {
         return CommonApi.success("successCount", adminService.deleteAdmin((int) data.get("id")));
     }
 
+    /**
+    * @Description: 获取名字与ID的映射
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-02-14
+    */
     @GetMapping("options")
     @TokenRequired
     public List<menuOptionsBean> getOptions() {

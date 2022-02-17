@@ -11,7 +11,7 @@ import java.util.Map;
  **/
 public class ParamsFormater {
     /**
-    * @Description: 格式化页面查询参数
+    * @Description: 格式化分页页查询参数
     * @Param: page      页码
     * @Param: pageSize  页面大小
     * @return:

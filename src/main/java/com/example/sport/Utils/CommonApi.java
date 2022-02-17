@@ -44,8 +44,6 @@ public class CommonApi {
     }
 
     public static Map<String, Object> success(Object data, int count) {
-//        List<Object> result = new ArrayList<>();
-//        result.add(data);
         return common(data, "操作成功", 1, count);
     }
 

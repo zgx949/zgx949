@@ -1,10 +1,8 @@
 package com.example.sport.Utils;
-
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-
 import java.util.Date;
 import java.util.HashMap;
 

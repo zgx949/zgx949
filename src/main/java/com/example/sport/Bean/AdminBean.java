@@ -1,10 +1,8 @@
 package com.example.sport.Bean;
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
-//import org.springframework.data.annotation.Id;
 @TableName("admin")
 public class AdminBean {
     @TableId
@@ -21,7 +19,6 @@ public class AdminBean {
     private int collegeId;
     @TableField("is_delete")
     private int isDelete;
-//    private CollegesBean collegeId;
 
     public AdminBean() {
     }

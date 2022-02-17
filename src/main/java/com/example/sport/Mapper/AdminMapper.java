@@ -16,6 +16,13 @@ import java.util.List;
 @Mapper
 public interface AdminMapper extends BaseMapper<AdminBean> {
 
+    /**
+    * @Description: 自定义sql查询（非必要）
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-02-14
+    */
     @Select({"${sql}"})
     @ResultType(ArrayList.class)
     List<AdminBean> executeQuery(@Param("sql") String sql);

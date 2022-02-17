@@ -5,9 +5,11 @@ import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
+import com.example.sport.Utils.RedisUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -77,6 +79,19 @@ class SportApplicationTests {
                 "LEFT JOIN JOIN colleges ON colleges.id=admin.college_id " +
                 "LIMIT 5 OFFSET 0")
                 .forEach(System.out::println);
+
+    }
+
+    @Autowired
+    RedisTemplate redisTemplate;
+
+    @Test
+    public void redisTest() {
+        // 覆写(overwrite) 给定 key 所储存的字符串值，从偏移量 offset 开始
+        redisTemplate.opsForValue().set("king","haDa",2);
+        Object king = redisTemplate.opsForValue().get("king");
+        System.out.println(king);
+
 
     }
 
