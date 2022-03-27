@@ -2,7 +2,9 @@ package com.example.sport.Utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -11,26 +13,36 @@ import java.util.concurrent.TimeUnit;
  * @author: 左手
  * @create: 2022-02-17 18:44
  **/
+@Component
 public class RedisUtils {
-    @Autowired
-    private RedisTemplate redisTemplate;
+
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+
 
     /**
-     * 读取缓存
-     *
-     * @param key
-     */
+    * @Description: 读取缓存
+    * @Param: key
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-03-27
+    */
     public Object get(final String key) {
         return redisTemplate.opsForValue().get(key);
     }
 
+
     /**
-     * 写入缓存
-     */
-    public boolean set( String key, Object value) {
+    * @Description: 写入缓存
+    * @Param:
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-03-27
+    */
+    public boolean set(String key, Object value) {
         boolean result = false;
         try {
-            redisTemplate.opsForValue().set(key, value,1, TimeUnit.DAYS);
+            redisTemplate.opsForValue().set(key, value);
             result = true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,9 +50,15 @@ public class RedisUtils {
         return result;
     }
 
+
     /**
-     * 更新缓存
-     */
+    * @Description: 更新缓存
+    * @Param: key: String
+    * @Param: value: String
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-03-27
+    */
     public boolean getAndSet(final String key, String value) {
         boolean result = false;
         try {
@@ -55,6 +73,13 @@ public class RedisUtils {
     /**
      * 删除缓存
      */
+    /**
+    * @Description: 删除缓存
+    * @Param: key: String
+    * @return:
+    * @Author: 左手
+    * @Date: 2022-03-27
+    */
     public boolean delete(final String key) {
         boolean result = false;
         try {
