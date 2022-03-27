@@ -9,6 +9,8 @@ import java.util.Map;
 
 
 public class CommonApi {
+    //TODO: 重构公共接口API，把冗余的类型用泛型来替代
+
     /**
     * @Description: 公共接口
     * @Param:

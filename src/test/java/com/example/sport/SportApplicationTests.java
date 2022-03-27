@@ -87,10 +87,12 @@ class SportApplicationTests {
 
     @Test
     public void redisTest() {
+        redisTemplate.opsForValue().set("myKey", "myValue");
+        System.out.println(redisTemplate.opsForValue().get("myKey"));
         // 覆写(overwrite) 给定 key 所储存的字符串值，从偏移量 offset 开始
-        redisTemplate.opsForValue().set("king","haDa",2);
-        Object king = redisTemplate.opsForValue().get("king");
-        System.out.println(king);
+//        redisTemplate.opsForValue().set("king","haDa",2);
+//        Object king = redisTemplate.opsForValue().get("king");
+//        System.out.println(king);
 
 
     }
