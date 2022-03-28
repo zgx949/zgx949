@@ -1,4 +1,5 @@
 # 运动会系统后端
+[前端]()
 ---
 
 #### 介绍
@@ -21,10 +22,12 @@
 ---
 
 #### 软件架构
-软件架构说明
+* 软件架构说明
+  ![img.png](framework.png)
 
-Spring Boot + MyBatis-plus + Mysql + Redis的运动会系统后端
-
+* 数据表结构[说明文档]()
+  ![img.png](tables.jpg)
+  
 
 #### 安装教程
 
