@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @program: sport
@@ -44,6 +45,7 @@ public class AdminServiceImpl implements AdminService {
         AdminBean admin = adminMapper.selectOne(queryWrapperAdmin);
         if (admin.getPassword().equals(password)) {
             // 账号密码正确
+            // 这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
             Map<String, Object> data = new HashMap<>();
             data.put("uid", admin.getId());
             data.put("name", admin.getName());
@@ -74,6 +76,7 @@ public class AdminServiceImpl implements AdminService {
         for (MenusBean menu : menus) {
             if (menu.getParentId() == menu.getId()) {
                 // 如果是顶级菜单
+                // 同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
                 Map<String, Object> tempMap = new HashMap<>();
                 tempMap.put("menuid", menu.getId());
                 tempMap.put("menuname", menu.getName());
