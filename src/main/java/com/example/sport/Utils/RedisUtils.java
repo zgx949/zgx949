@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @program: sport
  * @description: 操作Redis
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-17 18:44
  **/
 @Component
@@ -24,7 +24,7 @@ public class RedisUtils {
     * @Description: 读取缓存
     * @Param: key
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-03-27
     */
     public Object get(final String key) {
@@ -36,7 +36,7 @@ public class RedisUtils {
     * @Description: 写入缓存
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-03-27
     */
     public boolean set(String key, Object value) {
@@ -56,7 +56,7 @@ public class RedisUtils {
     * @Param: key: String
     * @Param: value: String
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-03-27
     */
     public boolean getAndSet(final String key, String value) {
@@ -77,7 +77,7 @@ public class RedisUtils {
     * @Description: 删除缓存
     * @Param: key: String
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-03-27
     */
     public boolean delete(final String key) {

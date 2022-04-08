@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * @program: sport
  * @description: 拦截器配置
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-13 14:15
  **/
 @Configuration

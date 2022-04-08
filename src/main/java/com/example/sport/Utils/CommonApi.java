@@ -7,17 +7,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * @Description: 公共接口
+ * @Author: LeftHand
+ * @Date: 2022-01-18
+ */
 public class CommonApi {
     //TODO: 重构公共接口API，把冗余的类型用泛型来替代
 
-    /**
-    * @Description: 公共接口
-    * @Param:
-    * @return:
-    * @Author: 左手
-    * @Date: 2022-01-18
-    */
+
      public static Map<String, Object> common(Object data, String msg, int code, int count) {
         Map<String, Object> result = new HashMap<>();
         result.put("msg", msg);
@@ -32,7 +30,7 @@ public class CommonApi {
     * @Description: 成功接口
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-18
     */
     public static Map<String, Object> success(List<Object> data) {
@@ -53,7 +51,7 @@ public class CommonApi {
     * @Description: 失败接口
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-18
     */
     public static Map<String, Object> error(Object data) {

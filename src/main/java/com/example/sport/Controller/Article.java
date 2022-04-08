@@ -25,7 +25,7 @@ public class Article {
     * @Description: 分页获取文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @GetMapping("/")
@@ -39,7 +39,7 @@ public class Article {
     * @Description: 添加文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @PostMapping("add")
@@ -53,7 +53,7 @@ public class Article {
     * @Description: 删除文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @PostMapping("delete")
@@ -66,7 +66,7 @@ public class Article {
     * @Description: 更新文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @PostMapping("update")
@@ -83,7 +83,7 @@ public class Article {
     * @Description: 获取评论
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @GetMapping("/comment")
@@ -99,7 +99,7 @@ public class Article {
     * @Description:  添加评论
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @PostMapping("/comment/add")
@@ -112,7 +112,7 @@ public class Article {
     * @Description: 删除评论
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-22
     */
     @PostMapping("/comment/delete")

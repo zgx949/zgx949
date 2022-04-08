@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @program: sport
  * @description: 将复合数据对象整理成树格式
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-11 15:26
  **/
 
@@ -18,7 +18,7 @@ public class BeanToTree {
     * @Param: rawData: List 原始数据
     * @Param: offsetIndex: int 已经封装的数据位置
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-02-11
     */
     public static List<Map<String, Object>> formatByParent(List<Map<String, Object>> rawData, int offsetIndex) {

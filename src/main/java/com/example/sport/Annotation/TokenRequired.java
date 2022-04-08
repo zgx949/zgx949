@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 * @Description: 管理员Token验证注解定义
 * @Param:
 * @return:
-* @Author: 左手
+* @Author: LeftHand
 * @Date: 2022-02-13
 */
 @Target({ElementType.METHOD, ElementType.TYPE})

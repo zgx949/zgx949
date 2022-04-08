@@ -14,7 +14,7 @@ public interface AdminService {
      * @Param: username 用户名
      * @Param: password 密码
      * @return: 登录是否成功
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     Map<String, Object> loginAdmin(String username, String password);
@@ -23,7 +23,7 @@ public interface AdminService {
      * @Description: 根据管理员等级来获取对应菜单的路径
      * @Param: levelId 管理员等级
      * @return: List<MenusBean> 菜单列表
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     List<Object> getMenu(int levelId);
@@ -33,7 +33,7 @@ public interface AdminService {
      * @Description:
      * @Param: Map<String, Object> admin实体
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int insertAdmin(AdminBean admin);
@@ -43,7 +43,7 @@ public interface AdminService {
      * @Description: 通过ID删除管理员账号
      * @Param: int id
      * @return: 删除个数
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int deleteAdmin(int id);
@@ -53,7 +53,7 @@ public interface AdminService {
      * @Description: 通过ID修改管理员信息接口
      * @Param: Map<String, Object> admin 实体
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int updateAdmin(AdminBean admin);
@@ -64,7 +64,7 @@ public interface AdminService {
      * @Param: int page 页数
      * @Param: int pageSize 页面大小
      * @return: AdminBean
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     List<AdminBean> getAdmin(int page, int pageSize);
@@ -76,7 +76,7 @@ public interface AdminService {
     * @Description: 是否存在该用户, 这个其实是一种Method，定义成接口不太好,直接定义到Bean类中
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-20
     */
     boolean exitAdmin(String username);
@@ -85,7 +85,7 @@ public interface AdminService {
     * @Description: 获取菜单的选项映射
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-28
     */
     List<menuOptionsBean> adminOptions();
@@ -94,7 +94,7 @@ public interface AdminService {
     * @Description: 根据ID查询管理员
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-02-13
     */
     AdminBean findAdminById(int id);

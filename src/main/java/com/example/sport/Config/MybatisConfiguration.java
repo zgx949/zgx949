@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @program: sport
  * @description: 分页拦截器
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-19 15:09
  **/
 

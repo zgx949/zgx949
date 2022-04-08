@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-24 17:54
  **/
 @Service
@@ -24,7 +24,7 @@ public class RegisterServiceImpl implements RegisterService {
     * @Description: 添加报名表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -36,7 +36,7 @@ public class RegisterServiceImpl implements RegisterService {
     * @Description: 删除报名表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -48,7 +48,7 @@ public class RegisterServiceImpl implements RegisterService {
     * @Description: 更新报名表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -60,7 +60,7 @@ public class RegisterServiceImpl implements RegisterService {
     * @Description: 获取报名表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -72,7 +72,7 @@ public class RegisterServiceImpl implements RegisterService {
     * @Description: 所有报名表数量
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override

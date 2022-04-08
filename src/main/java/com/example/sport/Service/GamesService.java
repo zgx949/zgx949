@@ -9,7 +9,7 @@ public interface GamesService {
      * @Description: 增加
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int insertGame(GamesBean game);
@@ -19,7 +19,7 @@ public interface GamesService {
      * @Description: 删除
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int delGame(int id);
@@ -28,7 +28,7 @@ public interface GamesService {
      * @Description: 修改
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int updateGame(GamesBean game);
@@ -37,7 +37,7 @@ public interface GamesService {
      * @Description: 查询
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     List<GamesBean> getGame(int page, int pageSize);

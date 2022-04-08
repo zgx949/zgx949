@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-22 17:54
  **/
 @Service
@@ -24,7 +24,7 @@ public class GamesServiceImpl implements GamesService {
     * @Description: 添加比赛
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -36,7 +36,7 @@ public class GamesServiceImpl implements GamesService {
     * @Description: 删除比赛
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -48,7 +48,7 @@ public class GamesServiceImpl implements GamesService {
     * @Description: 更新比赛
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -60,7 +60,7 @@ public class GamesServiceImpl implements GamesService {
     * @Description: 获取比赛
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -72,7 +72,7 @@ public class GamesServiceImpl implements GamesService {
     * @Description: 所有比赛数量
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override

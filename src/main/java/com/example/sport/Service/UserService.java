@@ -13,7 +13,7 @@ public interface UserService {
      * @Param: username 用户名
      * @Param: password 密码
      * @return: 登录是否成功
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     Map<String, Object> loginUser(String username, String password);
@@ -24,7 +24,7 @@ public interface UserService {
      * @Description:
      * @Param: Map<String, Object> User实体
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int insertUser(UserBean User);
@@ -34,7 +34,7 @@ public interface UserService {
      * @Description: 通过ID删除用户账号
      * @Param: int id
      * @return: 删除个数
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int deleteUser(int id);
@@ -44,7 +44,7 @@ public interface UserService {
      * @Description: 通过ID修改用户信息接口
      * @Param: Map<String, Object> User 实体
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int updateUser(UserBean User);
@@ -55,7 +55,7 @@ public interface UserService {
      * @Param: int page 页数
      * @Param: int pageSize 页面大小
      * @return: UserBean
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     List<UserBean> getUser(int page, int pageSize);
@@ -67,7 +67,7 @@ public interface UserService {
      * @Description: 是否存在该用户
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-20
      */
     boolean exitUser(String username);
@@ -76,7 +76,7 @@ public interface UserService {
     * @Description: 通过ID查询用户
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-02-13
     */
     UserBean findUserById(int id);

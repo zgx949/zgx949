@@ -9,7 +9,7 @@ public interface NumsService {
      * @Description: 增加
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-10
      */
     int insertNum(NumsBean num);
@@ -19,7 +19,7 @@ public interface NumsService {
      * @Description: 删除
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-10
      */
     int delNum(int id);
@@ -28,7 +28,7 @@ public interface NumsService {
      * @Description: 修改
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-10
      */
     int updateNum(NumsBean num);
@@ -37,7 +37,7 @@ public interface NumsService {
      * @Description: 查询
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-10
      */
     List<NumsBean> getNum(int page, int pageSize);

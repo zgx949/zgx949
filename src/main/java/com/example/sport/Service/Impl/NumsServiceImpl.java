@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-10 17:54
  **/
 @Service
@@ -24,7 +24,7 @@ public class NumsServiceImpl implements NumsService {
     * @Description: 添加号码
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -36,7 +36,7 @@ public class NumsServiceImpl implements NumsService {
     * @Description: 删除号码
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -48,7 +48,7 @@ public class NumsServiceImpl implements NumsService {
     * @Description: 更新号码
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -60,7 +60,7 @@ public class NumsServiceImpl implements NumsService {
     * @Description: 获取号码
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -72,7 +72,7 @@ public class NumsServiceImpl implements NumsService {
     * @Description: 所有号码数量
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override

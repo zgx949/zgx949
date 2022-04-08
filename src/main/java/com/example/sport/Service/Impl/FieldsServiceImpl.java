@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-22 17:54
  **/
 @Service
@@ -30,7 +30,7 @@ public class FieldsServiceImpl implements FieldsService {
     * @Description: 添加场地
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -42,7 +42,7 @@ public class FieldsServiceImpl implements FieldsService {
     * @Description: 删除场地
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -57,7 +57,7 @@ public class FieldsServiceImpl implements FieldsService {
     * @Description: 更新场地
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -69,7 +69,7 @@ public class FieldsServiceImpl implements FieldsService {
     * @Description: 获取场地
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -92,7 +92,7 @@ public class FieldsServiceImpl implements FieldsService {
     * @Description: 所有场地数量
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-23
     */
     @Override
@@ -104,7 +104,7 @@ public class FieldsServiceImpl implements FieldsService {
      * @Description: 获取场地书结构
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-11
      */
     @Override

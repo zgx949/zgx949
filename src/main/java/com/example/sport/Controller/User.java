@@ -23,7 +23,7 @@ public class User {
      * @Description: 登录控制器
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @PostMapping("login")
@@ -50,7 +50,7 @@ public class User {
      * @Description: 获取所有用户信息
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @GetMapping("list")
@@ -67,7 +67,7 @@ public class User {
      * @Description: 用户注册
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @PostMapping("add")
@@ -90,7 +90,7 @@ public class User {
      * @Description: 修改用户信息
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @PostMapping("update")
@@ -106,7 +106,7 @@ public class User {
      * @Description: 删除用户
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @PostMapping("delete")
