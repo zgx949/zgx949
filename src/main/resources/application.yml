@@ -16,6 +16,11 @@ spring:
     host: 8.134.216.66
     port: 6379
     password: zgx949
+
+  # 修改路径匹配规则，否则springboot2.6以后无法整合swagger2.0
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 # mybatis-plus相关配置
 mybatis-plus:
   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
@@ -36,4 +41,6 @@ mybatis-plus:
     call-setters-on-nulls: true
     # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
 

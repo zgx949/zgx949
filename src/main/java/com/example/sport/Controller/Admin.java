@@ -28,6 +28,7 @@ public class Admin {
      * @Date: 2022-01-18
      */
     @PostMapping("login")
+    @com.example.sport.Annotation.Admin(operator = "login")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
