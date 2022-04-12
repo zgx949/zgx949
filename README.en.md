@@ -27,6 +27,7 @@
 
 * 数据表结构[说明文档](./tables.md)
   ![img.png](tables.jpg)
+#### swagger2.0接口文档地址：http://localhost:8080/swagger-ui.html
 
 
 #### 安装教程
