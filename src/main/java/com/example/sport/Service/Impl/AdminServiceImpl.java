@@ -18,11 +18,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @program: sport
  * @description: 管理员服务层实现
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-18 10:40
  **/
 
@@ -44,6 +45,7 @@ public class AdminServiceImpl implements AdminService {
         AdminBean admin = adminMapper.selectOne(queryWrapperAdmin);
         if (admin.getPassword().equals(password)) {
             // 账号密码正确
+            // 这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
             Map<String, Object> data = new HashMap<>();
             data.put("uid", admin.getId());
             data.put("name", admin.getName());
@@ -72,8 +74,12 @@ public class AdminServiceImpl implements AdminService {
         // 查询
         List<MenusBean> menus = menusMapper.selectList(queryWrapperMenu);
         for (MenusBean menu : menus) {
+            /*
+                1.如果是顶级菜单
+                2.同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
+            * */
             if (menu.getParentId() == menu.getId()) {
-                // 如果是顶级菜单
+
                 Map<String, Object> tempMap = new HashMap<>();
                 tempMap.put("menuid", menu.getId());
                 tempMap.put("menuname", menu.getName());
@@ -154,7 +160,7 @@ public class AdminServiceImpl implements AdminService {
      * @Description: 根据ID查询管理员
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-13
      */
     @Override

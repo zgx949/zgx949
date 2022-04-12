@@ -20,7 +20,7 @@ public interface AdminMapper extends BaseMapper<AdminBean> {
     * @Description: 自定义sql查询（非必要）
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-02-14
     */
     @Select({"${sql}"})

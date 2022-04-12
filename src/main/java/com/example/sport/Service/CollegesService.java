@@ -10,7 +10,7 @@ public interface CollegesService {
      * @Description: 增加
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int insertCollege(CollegesBean college);
@@ -20,7 +20,7 @@ public interface CollegesService {
      * @Description: 删除
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int delCollege(int id);
@@ -29,7 +29,7 @@ public interface CollegesService {
      * @Description: 修改
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     int updateField(CollegesBean field);
@@ -38,7 +38,7 @@ public interface CollegesService {
      * @Description: 查询
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     List<CollegesBean> getCollege(int page, int pageSize);

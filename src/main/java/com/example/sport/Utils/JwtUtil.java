@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * @program: sport
  * @description: JWT签名计算计算工具
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-13 13:50
  **/
 public class JwtUtil {

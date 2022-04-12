@@ -24,10 +24,11 @@ public class Admin {
      * @Description: 登录控制器
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @PostMapping("login")
+    @com.example.sport.Annotation.Admin(operator = "login")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
@@ -50,7 +51,7 @@ public class Admin {
      * @Description: 获取所有管理员信息
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-18
      */
     @GetMapping("list")
@@ -68,7 +69,7 @@ public class Admin {
     * @Description: 管理员注册
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-18
     */
     @PostMapping("add")
@@ -91,7 +92,7 @@ public class Admin {
     * @Description: 修改管理员信息
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-18
     */
     @PostMapping("update")
@@ -108,7 +109,7 @@ public class Admin {
     * @Description: 删除管理员
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-18
     */
     @PostMapping("delete")
@@ -121,7 +122,7 @@ public class Admin {
     * @Description: 获取名字与ID的映射
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-02-14
     */
     @GetMapping("options")

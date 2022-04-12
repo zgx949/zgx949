@@ -9,7 +9,7 @@ public interface RegisterService {
      * @Description: 增加
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-24
      */
     int insertGame(RegistrationsBean register);
@@ -19,7 +19,7 @@ public interface RegisterService {
      * @Description: 删除
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-24
      */
     int delGame(int id);
@@ -28,7 +28,7 @@ public interface RegisterService {
      * @Description: 修改
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-24
      */
     int updateGame(RegistrationsBean register);
@@ -37,7 +37,7 @@ public interface RegisterService {
      * @Description: 查询
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-24
      */
     List<RegistrationsBean> getGame(int page, int pageSize);

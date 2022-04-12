@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-19 15:15
  **/
 public class ParamsFormater {
@@ -15,7 +15,7 @@ public class ParamsFormater {
     * @Param: page      页码
     * @Param: pageSize  页面大小
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     public static Map<String, Object> pageParams(Map<String, Object> data) {

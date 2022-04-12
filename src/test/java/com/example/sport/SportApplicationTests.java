@@ -5,7 +5,7 @@ import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
-import com.example.sport.Utils.RedisUtils;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

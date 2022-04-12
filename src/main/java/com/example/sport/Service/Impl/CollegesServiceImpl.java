@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @program: sport
  * @description:
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-22 17:54
  **/
 @Service
@@ -27,7 +27,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Description: 添加场地
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-23
      */
     @Override
@@ -39,7 +39,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Description: 删除场地
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-23
      */
     @Override
@@ -51,7 +51,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Description: 更新场地
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-23
      */
     @Override
@@ -63,7 +63,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Description: 获取场地
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-23
      */
     @Override
@@ -75,7 +75,7 @@ public class CollegesServiceImpl implements CollegesService {
      * @Description: 所有场地数量
      * @Param:
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-01-23
      */
     @Override

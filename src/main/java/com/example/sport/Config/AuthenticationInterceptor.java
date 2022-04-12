@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * @program: sport
  * @description: token验证拦截器
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-02-13 14:01
  **/
 public class AuthenticationInterceptor implements HandlerInterceptor {

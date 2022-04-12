@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * @program: sport
  * @description: 管理员服务层实现
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-18 10:40
  **/
 
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
      * @Description: 通过ID查询用户
      * @Param: int id 用户ID
      * @return:
-     * @Author: 左手
+     * @Author: LeftHand
      * @Date: 2022-02-13
      */
     @Override

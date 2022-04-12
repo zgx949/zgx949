@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * @program: sport
  * @description: 文章的增、删、查
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-01-19 15:41
  **/
 @Service
@@ -32,7 +32,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 增加文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -44,7 +44,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 删除文章
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -56,7 +56,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 修改
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -68,7 +68,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 分页获取文章列表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -83,7 +83,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 根据ID查找文章具体内容
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -100,7 +100,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 添加评论
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -112,7 +112,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 删除评论
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override
@@ -124,7 +124,7 @@ public class ArticleServiceImpl implements ArticleService {
     * @Description: 分页获取评论列表
     * @Param:
     * @return:
-    * @Author: 左手
+    * @Author: LeftHand
     * @Date: 2022-01-19
     */
     @Override

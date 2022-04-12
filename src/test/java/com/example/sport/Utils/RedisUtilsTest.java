@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 /**
  * @program: sport
  * @description: Redis工具测试类
- * @author: 左手
+ * @author: LeftHand
  * @create: 2022-03-27 20:17
  **/
 @SpringBootTest
