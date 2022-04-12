@@ -79,7 +79,8 @@ public class AdminServiceImpl implements AdminService {
                 2.同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
             * */
             if (menu.getParentId() == menu.getId()) {
-
+                // 如果是顶级菜单
+                // 同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
                 Map<String, Object> tempMap = new HashMap<>();
                 tempMap.put("menuid", menu.getId());
                 tempMap.put("menuname", menu.getName());
