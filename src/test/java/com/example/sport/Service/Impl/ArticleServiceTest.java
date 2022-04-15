@@ -53,8 +53,8 @@ public class ArticleServiceTest {
 
     @Test
     public void testAddComment() {
-        CommentBean comment = new CommentBean(1,1,"测试标题");
-        System.out.println();
+        CommentBean comment = new CommentBean(11,1,"这是个测试标题");
+        System.out.println(articleService.addComment(comment));
     }
 
     @Test
