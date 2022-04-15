@@ -1,5 +1,7 @@
 # 运动会系统后端
-[前端]()
+
+[前端点这里](https://gitee.com/zgx949/sport-admin)
+
 ---
 
 #### 介绍
@@ -25,15 +27,16 @@
 * 软件架构说明
   ![img.png](framework.png)
 
-* 数据表结构[说明文档](./tables.md)
+* 数据表结构[说明文档](/tables.md)
   ![img.png](tables.jpg)
   
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  git clone https://gitee.com/zgx949/sport.git
+2.  在IDEA打开
+3.  刷新安装maven依赖
+4.  运行
 
 #### 使用说明
 

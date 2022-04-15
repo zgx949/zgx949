@@ -79,7 +79,7 @@ public interface AdminService {
     * @Author: LeftHand
     * @Date: 2022-01-20
     */
-    boolean exitAdmin(String username);
+    boolean existsAdmin(String username);
 
     /**
     * @Description: 获取菜单的选项映射
