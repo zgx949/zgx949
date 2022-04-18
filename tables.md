@@ -7,7 +7,7 @@
 ### 数据库表目录
 | 序号 | 表名 | 描述 |
 | ---- | ---- | ---- |
-| 1 | admin | admin |
+| 1 | article | article |
 | 2 | article | article |
 | 3 | colleges | colleges |
 | 4 | comment | comment |
@@ -20,7 +20,7 @@
 | 11 | site_allocation | site_allocation |
 | 12 | user | user |
 ### 数据库表信息
-#### admin(admin)
+#### article(article)
 | 列名 | 类型 | KEY | 可否为空 | 默认值 | 注释 |
 | ---- | ---- | ---- | ---- | ---- | ----  |
 | id | int | PRI | NO |  |  |

@@ -1,5 +1,6 @@
 package com.example.sport.Controller;
 
+import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.CollegesBean;
 import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.CollegesService;
@@ -34,12 +35,14 @@ public class Colleges {
 
 
     @PostMapping("add")
+    @Log
     @TokenRequired
     public Map<String, Object> insertColleges(@RequestBody CollegesBean data) {
         return CommonApi.success("successCount", collegesService.insertCollege(data));
     }
 
     @TokenRequired
+    @Log
     @PostMapping("update")
     public Map<String, Object> updateColleges(@RequestBody CollegesBean data) {
 
@@ -49,12 +52,14 @@ public class Colleges {
     }
 
     @TokenRequired
+    @Log
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", collegesService.delCollege((int) data.get("id")));
     }
 
     @GetMapping("options")
+    @Log
     public List<menuOptionsBean> getOptions() {
         return collegesService.collegesOptions();
     }
