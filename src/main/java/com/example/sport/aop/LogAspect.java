@@ -27,9 +27,24 @@ public class LogAspect {
     @Autowired
     AdminService adminService;
 
+    /**
+     * 1. 这里可以加一个线程池做异步~~ 效果更佳哦
+     * 2. 还缺少一个异常捕获的日志
+     * 3. 记录在哪里，可视化界面的制作等等
+     */
+
+    /**
+     * 切点
+     */
     @Pointcut("@annotation(com.example.sport.Annotation.Log))")
     public void pt(){}
 
+    /**
+     * 切面
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
     @Around("pt()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
@@ -41,6 +56,11 @@ public class LogAspect {
         return proceed;
     }
 
+    /**
+     * 获取日志基本信息的公共方法
+     * @param joinPoint
+     * @param time
+     */
     private void recordLog(ProceedingJoinPoint joinPoint,long time) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 

@@ -36,6 +36,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Autowired
     UserService userService;
 
+    /**
+     * Swagger2 缺个白名单~~~~~校验方法
+     */
+
+
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {

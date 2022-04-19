@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Timestamp;
 
@@ -21,6 +22,7 @@ public class ArticleBean {
     @TableField("admin_id")
     private int adminId;
     @TableField("create_time")
+    @CreatedDate
     private Timestamp createTime;
 
     public ArticleBean() {
