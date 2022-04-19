@@ -28,7 +28,6 @@ public class Admin {
      * @Date: 2022-01-18
      */
     @PostMapping("login")
-    @com.example.sport.Annotation.Admin(operator = "login")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
@@ -75,7 +74,9 @@ public class Admin {
     @PostMapping("add")
     @TokenRequired
     public Map<String, Object> insertAdmin(@RequestBody AdminBean data) {
+        System.out.println("请求");
         int id = adminService.insertAdmin(data);
+        System.out.println(id);
         Map<String, Object> map = new HashMap<>();
         map.put("id", id);
         if (id == -1) {

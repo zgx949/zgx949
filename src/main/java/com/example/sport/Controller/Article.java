@@ -1,4 +1,5 @@
 package com.example.sport.Controller;
+import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.ArticleBean;
 import com.example.sport.Bean.CommentBean;
 import com.example.sport.Service.ArticleService;
@@ -44,6 +45,7 @@ public class Article {
     */
     @PostMapping("add")
     @TokenRequired
+    @Log
     Map<String, Object> addArticle(@RequestBody ArticleBean article) {
         article.setCreateTime(new Timestamp(new Date().getTime()));
         return CommonApi.success("successCount", articleService.addArticle(article));
@@ -57,6 +59,7 @@ public class Article {
     * @Date: 2022-01-22
     */
     @PostMapping("delete")
+    @Log
     @TokenRequired
     Map<String, Object> deleteArticle(@RequestBody Map<String, Object> data) {
         return CommonApi.success(articleService.delArticle((int) data.get("id")) > 0? "删除成功": "查无此文章", 1);
@@ -70,6 +73,7 @@ public class Article {
     * @Date: 2022-01-22
     */
     @PostMapping("update")
+    @Log
     @TokenRequired
     public Map<String, Object> updateArticle(@RequestBody ArticleBean data) {
         Map<String, Object> map = new HashMap<>();

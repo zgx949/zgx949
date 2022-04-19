@@ -1,7 +1,9 @@
 package com.example.sport.aop;
 
 import com.alibaba.fastjson.JSON;
-import com.example.sport.Annotation.Admin;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.HttpContextUtils;
 import com.example.sport.Utils.IpUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -10,17 +12,22 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
 
 @Slf4j
 @Aspect
 @Component
-public class AdminAspect {
+public class LogAspect {
 
-    @Pointcut("@annotation(com.example.sport.Annotation.Admin))")
+    @Autowired
+    AdminService adminService;
+
+    @Pointcut("@annotation(com.example.sport.Annotation.Log))")
     public void pt(){}
 
     @Around("pt()")
@@ -36,15 +43,23 @@ public class AdminAspect {
 
     private void recordLog(ProceedingJoinPoint joinPoint,long time) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        Method method = signature.getMethod();
-        Admin admin = method.getAnnotation(Admin.class);
+
+        // Article article = method.getAnnotation(Article.class);
         log.info("=====================log start===============");
-        log.info("operator:{}", admin.operator());
+        // 获取request
+        HttpServletRequest req = (HttpServletRequest) RequestContextHolder.getRequestAttributes().resolveReference(RequestAttributes.REFERENCE_REQUEST);
+
+        String token = req.getHeader("token");
+        DecodedJWT decodeToken = JWT.decode(token);
+        String username = decodeToken.getClaim("username").asString();
+        String id = decodeToken.getClaim("id").asString();
+        log.info("id:{},admin:{}", id, username);
+        // log.info("operator:{}", article.operator());
 
         //请求的方法名
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = signature.getName();
-        log.info("request method:{}", className + "." + methodName + "()");
+        log.info("operation:{}", className + "." + methodName + "()");
         //请求的参数
         Object[] args = joinPoint.getArgs();
         String params = JSON.toJSONString(args[0]);
@@ -52,8 +67,8 @@ public class AdminAspect {
         //获取request 设置IP地址
         HttpServletRequest request = HttpContextUtils.getHttpServletRequest();
         log.info("ip:{}", IpUtil.getIpAddr(request));
+        log.info("cost time:{}",time);
 
-        log.info("execute time : {} ms", time);
         log.info("=====================log end===============");
     }
 
