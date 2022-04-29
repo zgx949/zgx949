@@ -1,12 +1,10 @@
 package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.MenusBean;
 import com.example.sport.Bean.menuOptionsBean;
-import com.example.sport.Controller.Admin;
 import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
 import com.example.sport.Service.AdminService;
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @program: sport
@@ -79,7 +76,9 @@ public class AdminServiceImpl implements AdminService {
                 2.同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
             * */
             if (menu.getParentId() == menu.getId()) {
-                
+                // 如果是顶级菜单
+                // 同理，这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
+                // TODO: 修改为线程安全方法
                 Map<String, Object> tempMap = new HashMap<>();
                 tempMap.put("menuid", menu.getId());
                 tempMap.put("menuname", menu.getName());
@@ -112,7 +111,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean exitAdmin(String username) {
+    public boolean existsAdmin(String username) {
         // 构造admin表查询条件
         QueryWrapper<AdminBean> queryWrapperAdmin = new QueryWrapper<>();
         return adminMapper.selectCount(queryWrapperAdmin.eq("username", username)) > 0;
@@ -121,7 +120,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public int insertAdmin(AdminBean admin) {
         // 判断账号是否存在, 不存在就插入记录
-        return exitAdmin(admin.getUsername()) ? -1 : adminMapper.insert(admin);
+        return existsAdmin(admin.getUsername()) ? -1 : adminMapper.insert(admin);
     }
 
     @Override
@@ -136,8 +135,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<AdminBean> getAdmin(int page, int pageSize) {
-        List<AdminBean> result = adminMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
-        return result;
+        return adminMapper.selectPage(new Page<>(page, pageSize), null).getRecords();
     }
 
     @Override
@@ -156,7 +154,6 @@ public class AdminServiceImpl implements AdminService {
     }
 
     /**
-     * @param id
      * @Description: 根据ID查询管理员
      * @Param:
      * @return:
