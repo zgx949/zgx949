@@ -28,6 +28,12 @@ public class ArticleBean {
     public ArticleBean() {
     }
 
+    public ArticleBean(String title, String text, int adminId) {
+        this.title = title;
+        this.text = text;
+        this.adminId = adminId;
+    }
+
     public ArticleBean(int id, String title, String text, int adminId, Timestamp createTime) {
         this.id = id;
         this.title = title;
