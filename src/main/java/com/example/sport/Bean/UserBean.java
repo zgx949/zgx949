@@ -5,6 +5,7 @@ package com.example.sport.Bean;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Timestamp;
 
@@ -23,6 +24,7 @@ public class UserBean {
     @TableField("college_id")
     private int collegeId;
     @TableField("create_time")
+    @CreatedDate
     private Timestamp createTime;
     @TableField("athletes_id")
     private int athletesId;

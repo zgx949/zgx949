@@ -1,5 +1,6 @@
 package com.example.sport.Controller;
 
+import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.GamesBean;
 import com.example.sport.Service.GamesService;
 import com.example.sport.Utils.CommonApi;
@@ -33,6 +34,7 @@ public class Games {
     }
 
     @TokenRequired
+    @Log
     @PostMapping("add")
     public Map<String, Object> insertGames(@RequestBody GamesBean data) {
         data.setCreateTime(new Timestamp(new Date().getTime()));
@@ -41,6 +43,7 @@ public class Games {
     }
 
     @TokenRequired
+    @Log
     @PostMapping("update")
     public Map<String, Object> updateGames(@RequestBody GamesBean data) {
 
@@ -51,6 +54,7 @@ public class Games {
 
 
     @TokenRequired
+    @Log
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", gamesService.delGame((int) data.get("id")));

@@ -5,6 +5,8 @@ package com.example.sport.Bean;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 @TableName("games")
@@ -24,10 +26,13 @@ public class GamesBean {
     @TableField("status")
     private int status;
     @TableField("start_time")
+    @CreatedDate
     private Timestamp startTime;
     @TableField("end_time")
+    @LastModifiedDate
     private Timestamp endTime;
     @TableField("create_time")
+    @CreatedDate
     private Timestamp createTime;
 
     public GamesBean() {

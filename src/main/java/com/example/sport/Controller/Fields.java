@@ -1,5 +1,6 @@
 package com.example.sport.Controller;
 
+import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.FieldsBean;
 import com.example.sport.Service.FieldsService;
 import com.example.sport.Utils.CommonApi;
@@ -36,6 +37,7 @@ public class Fields {
 
 
     @TokenRequired
+    @Log
     @PostMapping("add")
     public Map<String, Object> insertFields(@RequestBody FieldsBean data) {
         return CommonApi.success("successCount", fieldsService.insertField(data));
@@ -43,6 +45,7 @@ public class Fields {
 
 
     @TokenRequired
+    @Log
     @PostMapping("update")
     public Map<String, Object> updateFields(@RequestBody FieldsBean data) {
 
@@ -53,6 +56,7 @@ public class Fields {
 
 
     @TokenRequired
+    @Log
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", fieldsService.delField((int) data.get("id")));
