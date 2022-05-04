@@ -6,6 +6,8 @@ import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormater;
 import com.example.sport.Annotation.TokenRequired;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.*;
 @RestController
 @CrossOrigin
 @RequestMapping("/admin")
+@Api(value = "管理员", tags = "管理员登录注册")
 public class Admin {
 
 
@@ -28,6 +31,7 @@ public class Admin {
      * @Date: 2022-01-18
      */
     @PostMapping("login")
+    @ApiOperation(value = "管理员登录", notes = "管理员登录", httpMethod = "POST")
     public Map<String, Object> login(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> res = adminService.loginAdmin(data.get("username").toString(), data.get("password").toString());
@@ -54,6 +58,7 @@ public class Admin {
      * @Date: 2022-01-18
      */
     @GetMapping("list")
+    @ApiOperation(value = "管理员列表", notes = "获取所有管理员的信息", httpMethod = "GET")
     @TokenRequired
     public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
@@ -72,6 +77,7 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("add")
+    @ApiOperation(value = "管理员注册", notes = "注册一个新的管理员并赋权限", httpMethod = "POST")
     @TokenRequired
     public Map<String, Object> insertAdmin(@RequestBody AdminBean data) {
         System.out.println("请求");
@@ -97,6 +103,7 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("update")
+    @ApiOperation(value = "管理员信息修改", notes = "修改管理员的信息", httpMethod = "POST")
     @TokenRequired
     public Map<String, Object> updateAdmin(@RequestBody AdminBean data) {
 
@@ -114,6 +121,7 @@ public class Admin {
     * @Date: 2022-01-18
     */
     @PostMapping("delete")
+    @ApiOperation(value = "删除管理员", notes = "根据ID删除管理员用户", httpMethod = "POST")
     @TokenRequired
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", adminService.deleteAdmin((int) data.get("id")));

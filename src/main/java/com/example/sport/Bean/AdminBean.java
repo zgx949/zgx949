@@ -2,21 +2,35 @@ package com.example.sport.Bean;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModelProperty;
 
 @TableName("admin")
 public class AdminBean {
+
+    @ApiModelProperty(value = "管理员ID", name = "id", example = "1", required = true)
     @TableId
     private int id;
+
+    @ApiModelProperty(value = "用户名", name = "username", example = "admin", required = true)
     @TableField("username")
     private String username;
+
+    @ApiModelProperty(value = "密码", name = "password", example = "123456")
     @TableField("password")
     private String password;
+
+    @ApiModelProperty(value = "姓名", name = "name", example = "张三")
     @TableField("name")
     private String name;
+
+    @ApiModelProperty(value = "权限等级", name = "level", example = "1")
     @TableField("level")
     private int level;
+
+    @ApiModelProperty(value = "学院ID", name = "collegeId", example = "1")
     @TableField("college_id")
     private int collegeId;
+
     @TableField("is_delete")
     private int isDelete;
 

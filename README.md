@@ -43,7 +43,10 @@
 #### 软件架构
 * 软件架构说明
   ![img.png](framework.png)
-
+  
+* 基础ER关系图
+  ![](ER图.png)
+  
 * 数据表结构[说明文档](/tables.md)
   ![img.png](tables.jpg)
   
