@@ -5,7 +5,7 @@ import com.example.sport.Bean.CollegesBean;
 import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.CollegesService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import com.example.sport.Annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class Colleges {
     @TokenRequired
     public Map<String, Object> getColleges(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
 
         // 分页查询
         List<CollegesBean> colleges = collegesService.getCollege((int) data.get("page"), (int) data.get("pageSize"));

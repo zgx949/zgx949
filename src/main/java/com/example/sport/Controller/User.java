@@ -3,7 +3,7 @@ package com.example.sport.Controller;
 import com.example.sport.Bean.UserBean;
 import com.example.sport.Service.UserService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,7 +56,7 @@ public class User {
     @GetMapping("list")
     public Map<String, Object> getUsers(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
 
         // 分页查询
         List<UserBean> users = userService.getUser((int)data.get("page"), (int)data.get("pageSize"));

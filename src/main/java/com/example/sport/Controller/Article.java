@@ -5,7 +5,7 @@ import com.example.sport.Bean.CommentBean;
 import com.example.sport.Service.ArticleService;
 
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import com.example.sport.Annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,7 +31,7 @@ public class Article {
     */
     @GetMapping("/")
     Map<String, Object> articleList(@RequestParam Map<String, Object> params) {
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
         // 分页查询
         return CommonApi.success(articleService.getArticle((int)data.get("page"), (int)data.get("pageSize")), articleService.countArticle());
     }
@@ -92,7 +92,7 @@ public class Article {
     */
     @GetMapping("/comment")
     Map<String, Object> commentList(@RequestParam Map<String, Object> params) {
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
         // 分页查询
         int articleId = Integer.parseInt(params.get("aid").toString());
         List<CommentBean> articleList = articleService.getComment(articleId, (int)data.get("page"), (int)data.get("pageSize"));

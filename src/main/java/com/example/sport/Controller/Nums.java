@@ -3,7 +3,7 @@ package com.example.sport.Controller;
 import com.example.sport.Bean.NumsBean;
 import com.example.sport.Service.NumsService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ public class Nums {
     @GetMapping("")
     public Map<String, Object> getNums(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
 
         // 分页查询
         List<NumsBean> nums = numsService.getNum((int)data.get("page"), (int)data.get("pageSize"));

@@ -4,7 +4,7 @@ import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.GamesBean;
 import com.example.sport.Service.GamesService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import com.example.sport.Annotation.TokenRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class Games {
     @GetMapping("")
     public Map<String, Object> getGames(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
 
         // 分页查询
         List<GamesBean> games = gamesService.getGame((int)data.get("page"), (int)data.get("pageSize"));

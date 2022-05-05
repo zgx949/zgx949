@@ -4,7 +4,7 @@ import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import com.example.sport.Annotation.TokenRequired;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -62,7 +62,7 @@ public class Admin {
     @TokenRequired
     public Map<String, Object> getAdmins(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
 
         // 分页查询
         List<AdminBean> admins = adminService.getAdmin((int)data.get("page"), (int)data.get("pageSize"));

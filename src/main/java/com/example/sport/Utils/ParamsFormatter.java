@@ -9,7 +9,7 @@ import java.util.Map;
  * @author: LeftHand
  * @create: 2022-01-19 15:15
  **/
-public class ParamsFormater {
+public class ParamsFormatter {
     /**
     * @Description: 格式化分页页查询参数
     * @Param: page      页码

@@ -5,7 +5,7 @@ import com.example.sport.Annotation.TokenRequired;
 import com.example.sport.Bean.ItemBean;
 import com.example.sport.Service.ItemService;
 import com.example.sport.Utils.CommonApi;
-import com.example.sport.Utils.ParamsFormater;
+import com.example.sport.Utils.ParamsFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +24,7 @@ public class Item {
     @GetMapping("")
     public Map<String, Object> getItem(@RequestParam Map<String, Object> params) {
         // 解析页面分页参数
-        Map<String, Object> data = ParamsFormater.pageParams(params);
+        Map<String, Object> data = ParamsFormatter.pageParams(params);
         int parentId = -1;
         try {
             parentId = Integer.parseInt(params.get("parentId").toString());
