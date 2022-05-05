@@ -16,13 +16,15 @@ public class RegistrationsBean {
     private int gameId;
     @TableField("user_id")
     private int userId;
+    @TableField("field_id")
+    private int fieldId;
     @TableField("status")
     private int status;
-    @TableField("reviewer_id")
-    private int reviewerId;
     @TableField("create_time")
     @CreatedDate
     private Timestamp createTime;
+    @TableField("update_time")
+    private Timestamp updateTile;
 
     public Timestamp getCreateTime() {
         return createTime;
@@ -40,7 +42,15 @@ public class RegistrationsBean {
         this.gameId = gameId;
         this.userId = userId;
         this.status = status;
-        this.reviewerId = reviewerId;
+        this.fieldId = reviewerId;
+    }
+
+    public Timestamp getUpdateTile() {
+        return updateTile;
+    }
+
+    public void setUpdateTile(Timestamp updateTile) {
+        this.updateTile = updateTile;
     }
 
     public int getId() {
@@ -75,11 +85,11 @@ public class RegistrationsBean {
         this.status = status;
     }
 
-    public int getReviewerId() {
-        return reviewerId;
+    public int getFieldId() {
+        return fieldId;
     }
 
-    public void setReviewerId(int reviewerId) {
-        this.reviewerId = reviewerId;
+    public void setFieldId(int fieldId) {
+        this.fieldId = fieldId;
     }
 }

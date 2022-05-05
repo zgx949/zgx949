@@ -36,7 +36,7 @@ public class Registrations {
     public Map<String, Object> insertRegistrations(@RequestBody RegistrationsBean data) {
         // 保证添加报名表时候只能是未审核状态
         data.setStatus(0);
-        data.setReviewerId(9);
+        data.setFieldId(9);
 
         data.setCreateTime(new Timestamp(new Date().getTime()));
         return CommonApi.success("successCount", registerService.insertGame(data));

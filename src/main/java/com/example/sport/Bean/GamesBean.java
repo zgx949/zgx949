@@ -14,6 +14,9 @@ public class GamesBean {
     @TableId
     private int id;
     @TableField("game_name")
+    @TableId
+    private int itemId;
+    @TableField("item_id")
     private String gameName;
     @TableField("next_game")
     private int nextGame;
@@ -49,6 +52,14 @@ public class GamesBean {
         this.startTime = startTime;
         this.endTime = endTime;
         this.createTime = createTime;
+    }
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public int getId() {
