@@ -74,8 +74,10 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         if (type != 0) {
             // 执行认证
             if (token == null) {
-//                throw new RuntimeException("无token，请重新登录");
+
                 falseResult(httpServletResponse);
+//                throw new RuntimeException("无token，请重新登录");
+                return false;
             }
             // 获取 token 中的 admin或者user的id
             String id;

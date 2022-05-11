@@ -73,7 +73,7 @@ public interface AdminService {
     int countAdmin();
 
     /**
-    * @Description: 是否存在该用户, 这个其实是一种Method，定义成接口不太好,直接定义到Bean类中
+    * @Description: 是否存在该用户, TODO: 这个其实是一种Method，定义成接口不太好,直接定义到Bean类中
     * @Param:
     * @return:
     * @Author: LeftHand

@@ -13,7 +13,7 @@ public interface ItemService {
     * @Author: LeftHand
     * @Date: 2022-01-18
     */
-    int insertField(ItemBean item);
+    int insertItem(ItemBean item);
 
 
     /**
@@ -23,7 +23,7 @@ public interface ItemService {
     * @Author: LeftHand
     * @Date: 2022-01-18
     */
-    int delField(int id);
+    int delItem(int id);
 
     /**
     * @Description: 修改
@@ -32,7 +32,7 @@ public interface ItemService {
     * @Author: LeftHand
     * @Date: 2022-01-18
     */
-    int updateField(ItemBean item);
+    int updateItem(ItemBean item);
 
     /**
     * @Description: 查询
@@ -41,7 +41,7 @@ public interface ItemService {
     * @Author: LeftHand
     * @Date: 2022-01-18
     */
-    List<ItemBean> getField(int parentId, int page, int pageSize);
+    List<ItemBean> getItem(int page, int pageSize);
 
     /**
     * @Description: 查询总数据量

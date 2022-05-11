@@ -33,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
     * @Date: 2022-01-23
     */
     @Override
-    public int insertField(ItemBean item) {
+    public int insertItem(ItemBean item) {
         return itemMapper.insert(item);
     }
 
@@ -45,7 +45,7 @@ public class ItemServiceImpl implements ItemService {
     * @Date: 2022-01-23
     */
     @Override
-    public int delField(int id) {
+    public int delItem(int id) {
         Map<String, Object> mp = new HashMap<>();
         QueryWrapper<ItemBean> queryWrapper = new QueryWrapper();
         queryWrapper.eq("id", id).or().eq("parent_id", id);
@@ -60,7 +60,7 @@ public class ItemServiceImpl implements ItemService {
     * @Date: 2022-01-23
     */
     @Override
-    public int updateField(ItemBean item) {
+    public int updateItem(ItemBean item) {
         return itemMapper.updateById(item);
     }
 
@@ -72,18 +72,9 @@ public class ItemServiceImpl implements ItemService {
     * @Date: 2022-01-23
     */
     @Override
-    public List<ItemBean> getField(int parentId, int page, int pageSize) {
+    public List<ItemBean> getItem(int page, int pageSize) {
         QueryWrapper<ItemBean> queryWrapper = new QueryWrapper();
 
-        if (parentId == -1) {
-            // 获取所有场地信息，并通过parent_id升序排序
-            queryWrapper.select().orderByAsc("parent_id");
-
-        } else {
-            // 根据parent_id来进行筛选
-            queryWrapper.eq("parent_id", parentId);
-
-        }
         return itemMapper.selectPage(new Page<>(page, pageSize), queryWrapper).getRecords();
     }
 

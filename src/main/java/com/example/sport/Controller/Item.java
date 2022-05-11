@@ -31,7 +31,7 @@ public class Item {
         } catch (Exception ignored){}
 
         // 分页查询
-        List<ItemBean> items = itemsService.getField(parentId, (int)data.get("page"), (int)data.get("pageSize"));
+        List<ItemBean> items = itemsService.getItem((int)data.get("page"), (int)data.get("pageSize"));
         return CommonApi.success(items, itemsService.countItem());
     }
 
@@ -40,7 +40,7 @@ public class Item {
     @Log
     @PostMapping("add")
     public Map<String, Object> insertItem(@RequestBody ItemBean data) {
-        return CommonApi.success("successCount", itemsService.insertField(data));
+        return CommonApi.success("successCount", itemsService.insertItem(data));
     }
 
 
@@ -50,7 +50,7 @@ public class Item {
     public Map<String, Object> updateItem(@RequestBody ItemBean data) {
 
         Map<String, Object> map = new HashMap<>();
-        map.put("successCount", itemsService.updateField(data));
+        map.put("successCount", itemsService.updateItem(data));
         return CommonApi.success(map, 1);
     }
 
@@ -59,7 +59,7 @@ public class Item {
     @Log
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
-        return CommonApi.success("successCount", itemsService.delField((int) data.get("id")));
+        return CommonApi.success("successCount", itemsService.delItem((int) data.get("id")));
     }
 
 
