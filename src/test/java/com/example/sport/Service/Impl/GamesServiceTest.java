@@ -21,8 +21,8 @@ public class GamesServiceTest {
     public void testInsertGame() {
         Timestamp start = Timestamp.valueOf("2022-04-15 10:30:10");
         Timestamp end = Timestamp.valueOf("2022-04-15 11:10:20");
-        GamesBean game = new GamesBean(2, "400米", 1, 1, 2, 10, 1, start, end, start);
-        System.out.println(gamesService.insertGame(game));
+//        GamesBean game = new GamesBean(2, "400米", 1, 1, 2, 10, 1, start, end, start);
+//        System.out.println(gamesService.insertGame(game));
     }
 
     @Test
@@ -32,10 +32,10 @@ public class GamesServiceTest {
 
     @Test
     public void testUpdateGame() {
-        Timestamp start = Timestamp.valueOf("2022-04-15 9:30:10");
-        Timestamp end = Timestamp.valueOf("2022-04-15 11:10:20");
-        GamesBean game = new GamesBean(2, "400米接力", 1, 0, 2, 8, 1, start, end, start);
-        System.out.println(gamesService.updateGame(game));
+//        Timestamp start = Timestamp.valueOf("2022-04-15 9:30:10");
+//        Timestamp end = Timestamp.valueOf("2022-04-15 11:10:20");
+//        GamesBean game = new GamesBean(2, "400米接力", 1, 0, 2, 8, 1, start, end, start);
+//        System.out.println(gamesService.updateGame(game));
     }
 
     @Test

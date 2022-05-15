@@ -14,10 +14,9 @@ public class GamesBean {
     @TableId
     private int id;
     @TableField("game_name")
-    @TableId
-    private int itemId;
-    @TableField("item_id")
     private String gameName;
+    @TableField("item_id")
+    private int itemId;
     @TableField("next_game")
     private int nextGame;
     @TableField("gender")
@@ -41,8 +40,9 @@ public class GamesBean {
     public GamesBean() {
     }
 
-    public GamesBean(int id, String gameName, int nextGame, int gender, int fieldId, int maxPerson, int status, Timestamp startTime, Timestamp endTime, Timestamp createTime) {
+    public GamesBean(int id, int itemId, String gameName, int nextGame, int gender, int fieldId, int maxPerson, int status, Timestamp startTime, Timestamp endTime, Timestamp createTime) {
         this.id = id;
+        this.itemId = itemId;
         this.gameName = gameName;
         this.nextGame = nextGame;
         this.gender = gender;

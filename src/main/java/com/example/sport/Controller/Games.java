@@ -38,6 +38,9 @@ public class Games {
     @Log
     @PostMapping("add")
     public Map<String, Object> insertGames(@RequestBody GamesBean data) {
+        if (data.getNextGame() == 0) {
+            data.setGameName(null);
+        }
         data.setCreateTime(new Timestamp(new Date().getTime()));
         return CommonApi.success("successCount", gamesService.insertGame(data));
 
