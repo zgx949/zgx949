@@ -136,6 +136,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public int updateAdmin(AdminBean admin) {
+        // 密码先加盐处理
+        admin.setPassword(Md5Utils.encrypt3ToMD5(salt + admin.getPassword()));
         return adminMapper.updateById(admin);
     }
 

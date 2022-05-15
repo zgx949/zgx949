@@ -2,7 +2,9 @@ package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.sport.Bean.AdminBean;
 import com.example.sport.Bean.FieldsBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Mapper.FieldsMapper;
 import com.example.sport.Service.FieldsService;
 import com.example.sport.Utils.BeanToTree;
@@ -114,5 +116,16 @@ public class FieldsServiceImpl implements FieldsService {
             res.add(item.toMap());
         }
         return BeanToTree.formatByParent(res);
+    }
+
+    @Override
+    public List<menuOptionsBean> fieldOptions() {
+        List <FieldsBean> fields = fieldsMapper.selectList(null);
+        List<menuOptionsBean> menuOptionsBeanList = new ArrayList<>();
+
+        for (FieldsBean field: fields) {
+            menuOptionsBeanList.add(new menuOptionsBean(field.getName(), field.getId()));
+        }
+        return menuOptionsBeanList;
     }
 }

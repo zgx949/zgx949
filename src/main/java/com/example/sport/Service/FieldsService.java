@@ -1,6 +1,7 @@
 package com.example.sport.Service;
 
 import com.example.sport.Bean.FieldsBean;
+import com.example.sport.Bean.menuOptionsBean;
 
 import java.util.List;
 import java.util.Map;
@@ -60,4 +61,13 @@ public interface FieldsService {
     * @Date: 2022-02-11
     */
     List<Map<String, Object>> fieldTree();
+
+    /**
+    * @Description: 获取场地映射表
+    * @Param:
+    * @return:
+    * @Author: leftHand
+    * @Date: 2022-05-15
+    */
+    List<menuOptionsBean> fieldOptions();
 }
