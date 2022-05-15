@@ -1,6 +1,7 @@
 package com.example.sport.Service;
 
 import com.example.sport.Bean.ItemBean;
+import com.example.sport.Bean.menuOptionsBean;
 
 import java.util.List;
 import java.util.Map;
@@ -51,5 +52,7 @@ public interface ItemService {
     * @Date: 2022-02-11
     */
     int countItem();
+
+    List<menuOptionsBean> itemOptions();
 
 }

@@ -2,7 +2,10 @@ package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.sport.Bean.GamesBean;
 import com.example.sport.Bean.ItemBean;
+import com.example.sport.Bean.menuOptionsBean;
+import com.example.sport.Controller.Item;
 import com.example.sport.Mapper.ItemMapper;
 import com.example.sport.Service.ItemService;
 import com.example.sport.Utils.BeanToTree;
@@ -90,4 +93,14 @@ public class ItemServiceImpl implements ItemService {
         return itemMapper.selectCount(null);
     }
 
+    @Override
+    public List<menuOptionsBean> itemOptions() {
+        List <ItemBean> items = itemMapper.selectList(null);
+        List<menuOptionsBean> menuOptionsBeanList = new ArrayList<>();
+
+        for (ItemBean item: items) {
+            menuOptionsBeanList.add(new menuOptionsBean(item.getItemName(), item.getId()));
+        }
+        return menuOptionsBeanList;
+    }
 }

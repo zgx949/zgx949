@@ -3,6 +3,7 @@ package com.example.sport.Controller;
 import com.example.sport.Annotation.Log;
 import com.example.sport.Annotation.TokenRequired;
 import com.example.sport.Bean.ItemBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.ItemService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormatter;
@@ -57,5 +58,8 @@ public class Item {
         return CommonApi.success("successCount", itemsService.delItem((int) data.get("id")));
     }
 
-
+    @GetMapping("options")
+    public List<menuOptionsBean> getOptions() {
+        return itemsService.itemOptions();
+    }
 }
