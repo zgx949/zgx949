@@ -2,6 +2,7 @@ package com.example.sport.Controller;
 
 import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.FieldsBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.FieldsService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormatter;
@@ -65,5 +66,10 @@ public class Fields {
     @GetMapping("tree")
     public List<Map<String, Object>> getTree() {
         return fieldsService.fieldTree();
+    }
+
+    @GetMapping("options")
+    public List<menuOptionsBean> getOptions() {
+        return fieldsService.fieldOptions();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.sport.Service;
 
 import com.example.sport.Bean.GamesBean;
+import com.example.sport.Bean.menuOptionsBean;
 
 import java.util.List;
 
@@ -43,4 +44,6 @@ public interface GamesService {
     List<GamesBean> getGame(int page, int pageSize);
 
     int countGames();
+
+    List<menuOptionsBean> gameOptions();
 }

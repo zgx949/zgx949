@@ -2,6 +2,7 @@ package com.example.sport.Controller;
 
 import com.example.sport.Annotation.Log;
 import com.example.sport.Bean.GamesBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Service.GamesService;
 import com.example.sport.Utils.CommonApi;
 import com.example.sport.Utils.ParamsFormatter;
@@ -58,5 +59,10 @@ public class Games {
     @PostMapping("delete")
     public Map<String, Object> delete(@RequestBody Map<String, Object> data) {
         return CommonApi.success("successCount", gamesService.delGame((int) data.get("id")));
+    }
+
+    @GetMapping("options")
+    public List<menuOptionsBean> getOptions() {
+        return gamesService.gameOptions();
     }
 }

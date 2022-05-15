@@ -1,12 +1,15 @@
 package com.example.sport.Service.Impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.sport.Bean.FieldsBean;
 import com.example.sport.Bean.GamesBean;
+import com.example.sport.Bean.menuOptionsBean;
 import com.example.sport.Mapper.GamesMapper;
 import com.example.sport.Service.GamesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -78,5 +81,16 @@ public class GamesServiceImpl implements GamesService {
     @Override
     public int countGames() {
         return gamesMapper.selectCount(null);
+    }
+
+    @Override
+    public List<menuOptionsBean> gameOptions() {
+        List <GamesBean> games = gamesMapper.selectList(null);
+        List<menuOptionsBean> menuOptionsBeanList = new ArrayList<>();
+
+        for (GamesBean game: games) {
+            menuOptionsBeanList.add(new menuOptionsBean(game.getGameName(), game.getId()));
+        }
+        return menuOptionsBeanList;
     }
 }
