@@ -9,6 +9,7 @@ import com.example.sport.Mapper.AdminMapper;
 import com.example.sport.Mapper.MenusMapper;
 import com.example.sport.Service.AdminService;
 import com.example.sport.Utils.JwtUtil;
+import com.example.sport.Utils.Md5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,7 @@ import java.util.Map;
 
 @Service
 public class AdminServiceImpl implements AdminService {
+    private final String salt = "z%^&!g@#*(x&9!@#&4^%$(!*@9&$";
 
     @Autowired
     private AdminMapper adminMapper;
@@ -40,9 +42,11 @@ public class AdminServiceImpl implements AdminService {
         queryWrapperAdmin.eq("username", username);
         //查询
         AdminBean admin = adminMapper.selectOne(queryWrapperAdmin);
-        if (admin.getPassword().equals(password)) {
+
+        // 密码md5加盐校验
+        if (admin.getPassword().equals(Md5Utils.encrypt3ToMD5(salt + password))) {
             // 账号密码正确
-            // 这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
+            // TODO:这里可以试试线程安全的 ConcurrentHashMap<>(), 或者用putIfAbsent()方法，保持一致性
             Map<String, Object> data = new HashMap<>();
             data.put("uid", admin.getId());
             data.put("name", admin.getName());
@@ -119,6 +123,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public int insertAdmin(AdminBean admin) {
+        // 密码先加盐处理
+        admin.setPassword(Md5Utils.encrypt3ToMD5(salt + admin.getPassword()));
         // 判断账号是否存在, 不存在就插入记录
         return existsAdmin(admin.getUsername()) ? -1 : adminMapper.insert(admin);
     }

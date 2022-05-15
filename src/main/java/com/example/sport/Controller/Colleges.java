@@ -59,7 +59,6 @@ public class Colleges {
     }
 
     @GetMapping("options")
-    @Log
     public List<menuOptionsBean> getOptions() {
         return collegesService.collegesOptions();
     }

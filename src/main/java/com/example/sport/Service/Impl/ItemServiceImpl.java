@@ -26,7 +26,7 @@ public class ItemServiceImpl implements ItemService {
     ItemMapper itemMapper;
 
     /**
-    * @Description: 添加场地
+    * @Description: 添加项目
     * @Param:
     * @return:
     * @Author: LeftHand
@@ -38,7 +38,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
-    * @Description: 删除场地
+    * @Description: 删除项目
     * @Param:
     * @return:
     * @Author: LeftHand
@@ -53,7 +53,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
-    * @Description: 更新场地
+    * @Description: 更新项目
     * @Param:
     * @return:
     * @Author: LeftHand
@@ -65,7 +65,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
-    * @Description: 获取场地
+    * @Description: 获取项目
     * @Param:
     * @return:
     * @Author: LeftHand
@@ -79,7 +79,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
-    * @Description: 所有场地数量
+    * @Description: 所有项目数量
     * @Param:
     * @return:
     * @Author: LeftHand

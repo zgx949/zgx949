@@ -9,8 +9,8 @@ spring:
 #    url: jdbc:mysql://127.0.0.1:3306/sport1?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
     username: sport1
 #    mysql8以下的密码不需要单引号
-#    password: sport
     password: sport
+#    password: 'sport'
     type: com.alibaba.druid.pool.DruidDataSource
   redis:
     host: 8.134.216.66

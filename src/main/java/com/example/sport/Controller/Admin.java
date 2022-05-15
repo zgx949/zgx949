@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @RestController
@@ -18,7 +19,6 @@ import java.util.*;
 @RequestMapping("/admin")
 @Api(value = "管理员", tags = "管理员登录注册")
 public class Admin {
-
 
     @Autowired
     private AdminService adminService;
@@ -85,6 +85,7 @@ public class Admin {
         System.out.println(id);
         Map<String, Object> map = new HashMap<>();
         map.put("id", id);
+
         if (id == -1) {
             map.put("msg", "用户已存在");
             return CommonApi.error(map);

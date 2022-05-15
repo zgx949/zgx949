@@ -55,7 +55,13 @@ public class CommonApi {
     * @Date: 2022-01-18
     */
     public static Map<String, Object> error(Object data) {
-        return common(data, "非法操作", 0, 1);
+        String msg = "非法操作";
+        if (((Map<String, Object>) data).containsKey("msg")) {
+            msg = (String) ((Map<String, Object>) data).get("msg");
+        }
+
+//        return common(data, "非法操作", 0, 1);
+        return common(data, msg, 0, 1);
     }
 
     public static Map<String, Object> error(Object data, int count) {
@@ -68,12 +74,14 @@ public class CommonApi {
 
     public static Map<String, Object> error(String key, int value) {
         Map<String, Object> data = new HashMap<>();
-        data.put(key, value);
+        if (key != null)
+            data.put(key, value);
         return common(data, "非法操作", -1, 1);
     }
     public static Map<String, Object> error(String key, String value) {
         Map<String, Object> data = new HashMap<>();
-        data.put(key, value);
+        if (key != null)
+            data.put(key, value);
         return common(data, "非法操作", -1, 1);
     }
 

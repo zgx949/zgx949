@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 /**
  * @program: sport
- * @description: 项目管理
+ * @isDescription: 项目管理
  * @author: LeftHand
  * @create: 2022-05-05 21:04
  **/
@@ -24,15 +24,37 @@ public class ItemBean {
     private int maxPerson;
     @TableField("type")
     private int type;
+    @TableField("unit")
+    private String unit;
+    @TableField("is_desc")
+    private int isDesc;
 
     public ItemBean() {
     }
 
-    public ItemBean(int id, String itemName, int maxPerson, int type) {
+    public ItemBean(int id, String itemName, int maxPerson, int type, String unit, int isDesc) {
         this.id = id;
         this.itemName = itemName;
         this.maxPerson = maxPerson;
         this.type = type;
+        this.unit = unit;
+        this.isDesc = isDesc;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public int getDesc() {
+        return isDesc;
+    }
+
+    public void setDesc(int isDesc) {
+        this.isDesc = isDesc;
     }
 
     public int getId() {
