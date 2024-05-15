@@ -1,4 +1,4 @@
-# 我是左手 🐘
+# Hi there 👋 🐘
 * 🐧 A sports student who loves computers
 * 👨‍💻 Experience: Undergraduate student at Jiangxi University of Finance and Economics
 * 🏡 Works: [View Warehouse]([https://github.com/zgx949](https://github.com/zgx949?tab=repositories))
