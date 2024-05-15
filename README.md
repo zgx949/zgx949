@@ -1,22 +1,22 @@
 # 我是左手 🐘
-* 🐧 一个热爱计算机的体育生
-* 👨‍💻 经历：江西财经大学在读本科（24级考研战败）
-* 🏡 作品：[查看仓库]([https://github.com/zgx949](https://github.com/zgx949?tab=repositories))
-* 🌱 干货：
-* 😺 视频：[B站](https://space.bilibili.com/503892162)
-* 💬 微信：zgx20010809
-* 🤔 问题：
+* 🐧 A sports student who loves computers
+* 👨‍💻 Experience: Undergraduate student at Jiangxi University of Finance and Economics
+* 🏡 Works: [View Warehouse]([https://github.com/zgx949](https://github.com/zgx949?tab=repositories))
+* 🌱 Dry information:
+* 😺 Video: [Bilibili](https://space.bilibili.com/503892162)
+* 💬 Wechat：zgx20010809
+* 🤔 Others：
 
-# 今年汇总 ✨
-* [ ] ？
-* [x] 找到Go开发工作
+# This year’s summary ✨
+* [ ]?
+* [x] Find a Go development job
 
-# 关于Github
+# About github
 <a target="_blank" rel="noopener noreferrer nofollow" >
   <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=cn&hide_title=true&hide_border=true" "/>
 </a>
 
-## 语言和工具
+## Technology stack
 <p align="left">
   <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="java"
