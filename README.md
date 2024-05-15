@@ -8,13 +8,20 @@
 * 🤔 Others：
 
 # This year’s summary ✨
-* [ ]?
-* [x] Find a Go development job
+
+
+- [x] Find a Go development job
+- [ ] ?
 
 # About github
-<a target="_blank" rel="noopener noreferrer nofollow" >
-  <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=cn&hide_title=true&hide_border=true" "/>
-</a>
+<div>
+  <a target="_blank" rel="noopener noreferrer nofollow" >
+    <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=cn&hide_title=true&hide_border=true" "/>
+  </a>
+  <a target="_blank" rel="noopener noreferrer nofollow" >
+    <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=en&hide_title=true&hide_border=true" "/>
+  </a>
+</div>
 
 ## Technology stack
 <p align="left">
