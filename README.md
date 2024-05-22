@@ -10,7 +10,7 @@
 # This year’s summary ✨
 
 
-- [x] Find a Go development job
+- [x] Found a Go development job
 - [ ] ?
 
 # About github
