@@ -7,11 +7,11 @@
 * 💬 Wechat：zgx20010809
 * 🤔 Others：
 
-# This year’s summary ✨
+# This year’s summary（2024） ✨
 
 
 - [x] Found a Go development job
-- [ ] ?
+- [ ] Getting admitted to the Master's program in Computer Science
 
 # About github
 <div>
