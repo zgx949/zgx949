@@ -11,7 +11,7 @@
 
 
 - [x] Found a Go development job
-- [ ] Getting admitted to the Master's program in Computer Science
+- [ ] Getting admitted to the Master's program in Computer Science (preparing for Shanghai University)
 
 # About github
 <div>
