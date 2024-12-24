@@ -4,7 +4,7 @@
 * 🏡 Works: [View Warehouse]([https://github.com/zgx949](https://github.com/zgx949?tab=repositories))
 * 🌱 Dry information:
 * 😺 Video: [Bilibili](https://space.bilibili.com/503892162)
-* 💬 Wechat：zgx20010809
+* 💬 Wechat：Greyson949
 * 🤔 Others：
 
 # This year’s summary（2024） ✨
