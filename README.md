@@ -6,11 +6,10 @@
 * 💬 Wechat：Greyson949
 * 🤔 Others：
 
-# This year’s summary（2024） ✨
-
-
+# Last year’s summary（2024） ✨
 - [x] Found a Go development job
-- [ ] Getting admitted to the Master's program in Computer Science (preparing for Shanghai University)
+# This year’s summary（2025） ✨
+- [ ] Getting admitted to the Master's program in AI (preparing for Shanghai University)
 
 # About github
 <div>
@@ -19,6 +18,9 @@
   </a> -->
   <a target="_blank" rel="noopener noreferrer nofollow" >
     <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=en&hide_title=true&hide_border=true" "/>
+  </a>
+    <a target="_blank" rel="noopener noreferrer nofollow" >
+    <img  height="140px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zgx949&layout=compact" "/>
   </a>
 </div>
 
