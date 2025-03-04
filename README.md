@@ -1,9 +1,10 @@
 # Hi there 👋 🐘
 * 🐧 A sports student who loves computers
 * 👨‍💻 Experience: Undergraduate student at Jiangxi University of Finance and Economics
-* 🏡 Works: [View Warehouse]([https://github.com/zgx949](https://github.com/zgx949?tab=repositories))
+* 🏡 Works: [View repositories](https://github.com/zgx949?tab=repositories)
 * 😺 Video: [Bilibili](https://space.bilibili.com/503892162)
 * 💬 Wechat：Greyson949
+* 📧 Email：greysonz949@gmail.com
 * 🤔 Others：
 
 # Last year’s summary（2024） ✨
