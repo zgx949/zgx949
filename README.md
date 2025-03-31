@@ -10,7 +10,7 @@
 # Last year’s summary（2024） ✨
 - [x] Found a Go development job
 # This year’s summary（2025） ✨
-- [ ] Getting admitted to the Master's program in AI (preparing for Shanghai University)
+- [x] Getting admitted to the Master's program in AI (preparing for Shanghai University)
 
 # About github
 <div>
