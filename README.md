@@ -1,11 +1,13 @@
 # Hi there 👋 🐘
 * 🐧 A sports student who loves computers
-* 👨‍💻 Experience: Undergraduate student at Jiangxi University of Finance and Economics
+* 👨‍🎓 Education:
+  - Bachelor’s degree from the School of Physical Education, Jiangxi University of Finance and Economics
+  - Currently pursuing a Master’s in Artificial Intelligence at Shanghai University
 * 🏡 Works: [View repositories](https://github.com/zgx949?tab=repositories)
 * 😺 Video: [Bilibili](https://space.bilibili.com/503892162)
 * 💬 Wechat：Greyson949
 * 📧 Email：greysonz949@gmail.com
-* 🤔 Others：
+* 🤔 Others：Always exploring the intersection of sports and technology
 
 # Last year’s summary（2024） ✨
 - [x] Found a Go development job
