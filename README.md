@@ -1,4 +1,10 @@
 # Hi there 👋 🐘
+<div align="center">
+
+🌐 [**Website**](https://zgx949.github.io) &nbsp;|&nbsp; 📝 [**Blog**](https://www.lefthand.top)
+
+</div>
+
 * 🐧 A sports student who loves computers
 * 👨‍🎓 Education:
   - Bachelor’s degree from the School of Physical Education, Jiangxi University of Finance and Economics
@@ -8,11 +14,7 @@
 * 💬 Wechat：Greyson949
 * 📧 Email：greysonz949@gmail.com
 * 🤔 Others：Always exploring the intersection of sports and technology
-
-# Last year’s summary（2024） ✨
-- [x] Found a Go development job
-# This year’s summary（2025） ✨
-- [x] Getting admitted to the Master's program in AI (preparing for Shanghai University)
+  
 
 # About github
 <div>
