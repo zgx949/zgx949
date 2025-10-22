@@ -22,7 +22,8 @@
     <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=cn&hide_title=true&hide_border=true" "/>
   </a> -->
   <a target="_blank" rel="noopener noreferrer nofollow" >
-    <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&count_private=true&include_all_commits=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=en&hide_title=true&hide_border=true" />
+    ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&hide_border=true&locale=en&include_all_commits=true&count_private=true)
+    <!-- <img  height="140px" src="https://github-readme-stats.vercel.app/api?username=zgx949&show_icons=true&theme=radical&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=synthwave&locale=en&hide_title=true" /> -->
   </a>
     <a target="_blank" rel="noopener noreferrer nofollow" >
     <img  height="140px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zgx949&include_all_commits=true&count_private=true&layout=compact" "/>
