@@ -1,4 +1,4 @@
-# Hi there 👋 🐘
+# 🐘 Hi 👋
 <div align="center">
 
 🌐 [**Website**](https://zgx949.github.io) &nbsp;|&nbsp; 📝 [**Blog**](https://www.lefthand.top)
