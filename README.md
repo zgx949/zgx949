@@ -5,10 +5,10 @@
 
 </div>
 
-* 🐧 A sports student who loves computers
+* 🐧 A sports student who loves computers & a fool (full) stack / algorithm engineer
 * 👨‍🎓 Education:
-  - Bachelor’s degree from the School of Physical Education, Jiangxi University of Finance and Economics
-  - Currently pursuing a Master’s in Artificial Intelligence at Shanghai University
+  - [x] Bachelor’s degree from the School of Sports, JXUFE, China
+  - [ ] Currently pursuing a Master’s in AI at SHU, China
 * 🏡 Works: [View repositories](https://github.com/zgx949?tab=repositories)
 * 😺 Video: [Bilibili](https://space.bilibili.com/503892162)
 * 💬 Wechat：Greyson949
